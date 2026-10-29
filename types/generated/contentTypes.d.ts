@@ -764,6 +764,9 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    views: Schema.Attribute.Component<'elements.title-text', true>;
+    viewsLabel: Schema.Attribute.String;
+    viewsLede: Schema.Attribute.Text;
   };
 }
 

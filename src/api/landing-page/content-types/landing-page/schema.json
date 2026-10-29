@@ -65,6 +65,17 @@
       "repeatable": true,
       "component": "elements.text-item"
     },
+    "viewsLabel": {
+      "type": "string"
+    },
+    "viewsLede": {
+      "type": "text"
+    },
+    "views": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.title-text"
+    },
     "tieInsLabel": {
       "type": "string"
     },

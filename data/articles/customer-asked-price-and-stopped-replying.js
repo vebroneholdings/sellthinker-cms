@@ -19,7 +19,7 @@ module.exports = A({
     tldr('When a customer asks the price and stops replying, the price is rarely the whole story. Usually one thing is still open: size, delivery, trust or how to pay. Find which one, answer it in one message, and stop there. No apology, no invented urgency, no discount by default.'),
 
     text(
-      p('Your customer asked the price and stopped replying, and now the chat just sits there: their “rate batao?”, your “₹1,299”, two blue ticks, then nothing.'),
+      p('Your customer asked the price and stopped replying, and now the chat just sits there: their “rate batao?”, your “$49”, two blue ticks, then nothing.'),
       p('If you’re a solo seller handling 50–500 chats a day on Instagram and WhatsApp, you’ll have dozens of these by evening, and no time to guess which ones deserve a second message.'),
       p('Most of these buyers didn’t say no. They stopped at a specific question, and the price was just the last thing on screen. Here are the nine reasons buyers go quiet and the one best move for each.'),
 
@@ -58,8 +58,8 @@ module.exports = A({
 
     text(
       h2('Price talk: quiet after the number'),
-      p('A bare “₹1,299” gives the buyer nothing to weigh it against, and nothing to reply to. Don’t drop the price or apologise for it. Send it again with the one thing that makes it worth it.'),
-      p('**Send:** “Hi! The mulmul kurta is ₹1,299 with free shipping. It’s pure cotton, so it stays soft wash after wash. Shall I keep an M for you?” If they’d asked “last price?”, see [what to reply when a customer asks the price on WhatsApp](/resources/what-to-reply-when-customer-asks-price-whatsapp).'),
+      p('A bare “$49” gives the buyer nothing to weigh it against, and nothing to reply to. Don’t drop the price or apologise for it. Send it again with the one thing that makes it worth it.'),
+      p('**Send:** “Hi! The mulmul kurta is $49 with free shipping. It’s pure cotton, so it stays soft wash after wash. Shall I keep an M for you?” If they’d asked “last price?”, see [what to reply when a customer asks the price on WhatsApp](/resources/what-to-reply-when-customer-asks-price-whatsapp).'),
 
       h2('Missed question: they asked, nobody answered'),
       p('Somewhere above sits “blue mein hai?” with no reply under it. A follow-up that skips it tells the buyer you didn’t read their messages.'),
@@ -91,7 +91,7 @@ module.exports = A({
 
       h2('How to pay: they wanted to pay and couldn’t see how'),
       p('The warmest quiet buyer there is. They asked “GPay chalega?” and the answer came late, or without the UPI ID.'),
-      p('**Send:** your UPI ID or payment link and the total, in one message: “Total is ₹1,349 with shipping. UPI: [your UPI ID], or pay here: [your link]. Send a screenshot once done and I’ll pack it today.”'),
+      p('**Send:** your UPI ID or payment link and the total, in one message: “Total is $54 with shipping. UPI: [your UPI ID], or pay here: [your link]. Send a screenshot once done and I’ll pack it today.”'),
 
       h2('No response from customer: when to stop'),
       p('One follow-up per reason. If the buyer doesn’t answer a message that dealt with what stalled them, let it rest. A second nudge a few days later is fair for Date passed or Link unpaid; after that, mark the chat lost. Three “hello??” messages cost more than the sale: they cost the buyer’s next visit.'),

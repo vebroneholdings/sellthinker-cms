@@ -30,7 +30,7 @@ const DEMO = {
   integrations: 'integrations',
   'pipeline-insights': 'pipeline',
 };
-const KNOWN = ['eyebrow', 'title', 'lede', 'demoTitle', 'pillarsLabel', 'pillars', 'steps', 'howNote', 'outcomes', 'tieInsLabel', 'tieIns', 'faq'];
+const KNOWN = ['eyebrow', 'title', 'lede', 'demoTitle', 'pillarsLabel', 'pillars', 'steps', 'howNote', 'outcomes', 'viewsLabel', 'viewsLede', 'views', 'tieInsLabel', 'tieIns', 'faq'];
 
 const asTitleText = (list = []) => list.map((x) => ({ title: x.title, text: x.desc || x.text || '' }));
 const asText = (list = []) => list.map((x) => ({ text: typeof x === 'string' ? x : x.text || String(x) }));
@@ -50,6 +50,9 @@ const out = Object.entries(pages).map(([slug, p]) => {
     steps: asTitleText(p.steps),
     howNote: p.howNote || '',
     outcomes: asText(p.outcomes),
+    viewsLabel: p.viewsLabel || '',
+    viewsLede: p.viewsLede || '',
+    views: asTitleText(p.views),
     tieInsLabel: p.tieInsLabel || '',
     tieIns: asText(p.tieIns),
     faq: (p.faq || []).map((f) => ({ question: f.q, answer: f.a })),

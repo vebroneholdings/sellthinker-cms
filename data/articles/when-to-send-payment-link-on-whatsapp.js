@@ -36,12 +36,12 @@ module.exports = A({
 
     chat('whatsapp', [
       ['buyer', 'Hi, ye green kurta ka rate batao', '7:02 pm'],
-      ['seller', '₹1,299. Cotton, hand block print, ships in 2 days. Which size do you wear?', '7:10 pm'],
+      ['seller', '$49. Cotton, hand block print, ships in 2 days. Which size do you wear?', '7:10 pm'],
       ['buyer', 'M. Pune delivery hoga?', '7:12 pm'],
       ['seller', 'Yes, Pune is 3–4 days. M is in stock.', '7:13 pm'],
       ['buyer', 'Ok le leti hu. Kaise pay karu?', '7:15 pm'],
       ['note', 'Ready to close: product, size and city confirmed, buyer asked how to pay, no COD question.'],
-      ['seller', 'Green kurta, size M, ₹1,299 with delivery to Pune. Pay by UPI to {your UPI ID} or on this link: {your payment link}. I’ll pack it as soon as it’s in.', '7:16 pm'],
+      ['seller', 'Green kurta, size M, $49 with delivery to Pune. Pay by UPI to {your UPI ID} or on this link: {your payment link}. I’ll pack it as soon as it’s in.', '7:16 pm'],
     ], {
       title: 'The right moment for the link',
       caption: 'The link goes out only after the buyer asks how to pay, and it arrives with the product, size and total so there’s nothing left to check.',

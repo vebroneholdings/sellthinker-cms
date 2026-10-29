@@ -57,9 +57,9 @@ module.exports = A({
     ),
     chat('whatsapp', [
       ['buyer', 'Hi, ye saree ka rate batao', '9:12 pm'],
-      ['seller', '₹2,450', '9:30 pm'],
+      ['seller', '$89', '9:30 pm'],
       ['note', 'Seen at 9:31 pm. No reply since.'],
-      ['seller', 'Hi! It’s ₹2,450, pure silk with a zari border, and it ships tomorrow. Want me to keep one aside for you?', 'Rewrite'],
+      ['seller', 'Hi! It’s $89, pure silk with a zari border, and it ships tomorrow. Want me to keep one aside for you?', 'Rewrite'],
     ], {
       title: 'A bare price, and a better one',
       caption: 'The rewrite pairs the price with one reason it’s worth it and one easy next step. No discount, no invented urgency.',

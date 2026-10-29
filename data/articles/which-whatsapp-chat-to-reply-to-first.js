@@ -45,7 +45,7 @@ module.exports = A({
         { label: 'Close', cells: [{ value: 'Picked the maroon kurta, size M' }, { value: '“ok done, UPI ID bhejo”' }, { value: 'Send your UPI ID' }] },
         { label: 'Protect', cells: [{ value: 'Customer from last week' }, { value: '“Parcel abhi tak nahi aaya, 6 din ho gaye”' }, { value: 'Reply with the tracking link' }] },
         { label: 'Business', cells: [{ value: 'A boutique owner' }, { value: '“Wholesale rate milega? 40 pcs chahiye”' }, { value: 'Your wholesale price, or a time to talk' }] },
-        { label: 'Rescue', cells: [{ value: 'Asked the price yesterday' }, { value: '“rate batao” → you: “₹1,450” → silence' }, { value: 'Price plus the one thing that makes it worth it' }] },
+        { label: 'Rescue', cells: [{ value: 'Asked the price yesterday' }, { value: '“rate batao” → you: “$55” → silence' }, { value: 'Price plus the one thing that makes it worth it' }] },
         { label: 'Reply', cells: [{ value: 'A new buyer' }, { value: '“Size L available hai?”' }, { value: 'Yes or no, plus a photo' }] },
         { label: 'Later', cells: [{ value: 'The other 150 or so' }, { value: '“hi”, “👍”, “thank you”, a shared reel' }, { value: 'Nothing yet: there’s no question to answer' }] },
       ],

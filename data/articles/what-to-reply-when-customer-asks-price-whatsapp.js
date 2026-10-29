@@ -18,7 +18,7 @@ module.exports = A({
     metaDescription: 'Copy-ready replies for “rate batao”, “price?” and “last price?” on WhatsApp: the price, the one reason it’s worth it, one easy question. Hinglish too.',
   },
   body: [
-    tldr('Say the price plainly, in rupees, with shipping. Pair it with the one thing that makes it worth it. End with one question the buyer can answer in a word. Don’t hide the price behind “DM for details”, don’t open with a discount, and don’t answer “last price?” by dropping it straight away.'),
+    tldr('Say the price plainly, with shipping. Pair it with the one thing that makes it worth it. End with one question the buyer can answer in a word. Don’t hide the price behind “DM for details”, don’t open with a discount, and don’t answer “last price?” by dropping it straight away.'),
 
     text(
       p('Knowing what to reply when a customer asks the price on WhatsApp comes down to three lines, and most sellers send only the first.'),
@@ -28,7 +28,7 @@ module.exports = A({
       h2('How to reply to customer asking for price'),
       p('A good price reply has three parts:'),
       ol([
-        '**The price, plainly.** In rupees, with what’s included: “₹1,499 with free shipping” or “₹1,499 + ₹80 shipping”. No “starting from” when they asked about one piece.',
+        '**The price, plainly.** With what’s included: “$59 with free shipping” or “$59 + $5 shipping”. No “starting from” when they asked about one piece.',
         '**The one thing that makes it worth it.** One specific fact, not three adjectives: pure cotton, 92.5 silver with a hallmark, ships tomorrow, made to your size.',
         '**One easy question.** Something they can answer in a word: “M or L?”, “Shall I keep one for you?”',
       ]),
@@ -38,7 +38,7 @@ module.exports = A({
     block('blocks.before-after', {
       title: 'One rewrite',
       before: 'Price 1499/- only + shipping. Pls let me know.',
-      after: 'Hi! The rose kurta set is ₹1,499 with free shipping. It’s pure cotton with a lined top, so it isn’t see-through. Which size, M or L?',
+      after: 'Hi! The rose kurta set is $59 with free shipping. It’s pure cotton with a lined top, so it isn’t see-through. Which size, M or L?',
       why: 'The second reply answers the questions the buyer hadn’t asked yet (shipping, fabric) and ends with a choice they can make in one word.',
     }),
 
@@ -64,26 +64,26 @@ module.exports = A({
       p('Start from these. Swap the {braces} for your own product, price and fact. Save the ones you use most as Quick Replies in the WhatsApp Business app so they’re a shortcut away.'),
     ),
 
-    wa('One product, one price', 'Hi {name}! The {product} is ₹{price} with free shipping. {The one thing that makes it worth it}. Which {size / colour} would you like?', 'The buyer asked about one piece and the price doesn’t change by size.'),
-    wa('Price depends on the variant', 'Hi! The {product} is ₹{price A} in {variant A} and ₹{price B} in {variant B}. The {variant B} has {the difference}. Which one suits you?', 'Size, metal or pack size changes the price. Give both numbers rather than asking “which one?” first.'),
-    wa('“Price?” with no product named', 'Hi! Do you mean the {product} from {today’s status / the reel}? That one is ₹{price}, {the one thing}. Want a closer photo?', 'They replied to a status, a story or your catalogue and you can’t be sure which piece they mean. Confirm it before you quote.'),
-    wa('Price and COD in the same message', 'Hi! The {product} is ₹{price}. Yes, COD is available (₹{COD fee} extra), or {free shipping} if you pay by UPI. Which works for you?', 'They asked “price and COD?” together. Answer both in one message so they don’t have to ask twice.'),
+    wa('One product, one price', 'Hi {name}! The {product} is ${price} with free shipping. {The one thing that makes it worth it}. Which {size / colour} would you like?', 'The buyer asked about one piece and the price doesn’t change by size.'),
+    wa('Price depends on the variant', 'Hi! The {product} is ${price A} in {variant A} and ${price B} in {variant B}. The {variant B} has {the difference}. Which one suits you?', 'Size, metal or pack size changes the price. Give both numbers rather than asking “which one?” first.'),
+    wa('“Price?” with no product named', 'Hi! Do you mean the {product} from {today’s status / the reel}? That one is ${price}, {the one thing}. Want a closer photo?', 'They replied to a status, a story or your catalogue and you can’t be sure which piece they mean. Confirm it before you quote.'),
+    wa('Price and COD in the same message', 'Hi! The {product} is ${price}. Yes, COD is available (${COD fee} extra), or {free shipping} if you pay by UPI. Which works for you?', 'They asked “price and COD?” together. Answer both in one message so they don’t have to ask twice.'),
 
     text(
       h2('Rate batao: the Hinglish reply'),
       p('“Rate batao” and “kitne ka hai?” deserve the same three lines, in the buyer’s own language. Reply in Hinglish if they wrote in Hinglish; it reads as a person, not a price list.'),
     ),
 
-    wa('Rate batao (Hinglish)', 'Hi! {Product} ka rate ₹{price} hai, shipping free. {Pure cotton hai, wash ke baad bhi soft rehta hai}. Aapko kaunsa size chahiye?', 'The buyer wrote “rate batao”, “kitne ka hai?” or “price kya hai?”.'),
-    wa('Rate batao (Hindi)', 'नमस्ते! {प्रोडक्ट} की कीमत ₹{price} है, डिलीवरी फ़्री है। {यह शुद्ध कॉटन है, धुलने के बाद भी मुलायम रहता है}। आपको कौन सा साइज़ चाहिए?', 'The buyer wrote to you in Hindi.'),
+    wa('Rate batao (Hinglish)', 'Hi! {Product} ka rate ${price} hai, shipping free. {Pure cotton hai, wash ke baad bhi soft rehta hai}. Aapko kaunsa size chahiye?', 'The buyer wrote “rate batao”, “kitne ka hai?” or “price kya hai?”.'),
+    wa('Rate batao (Hindi)', 'नमस्ते! {प्रोडक्ट} की कीमत ${price} है, डिलीवरी फ़्री है। {यह शुद्ध कॉटन है, धुलने के बाद भी मुलायम रहता है}। आपको कौन सा साइज़ चाहिए?', 'The buyer wrote to you in Hindi.'),
 
     chat('whatsapp', [
       ['buyer', 'Hi, ye wala kurta rate batao', '10:42'],
-      ['seller', 'Hi! Ye mulmul kurta ₹1,299 hai, shipping free. Pure cotton hai, wash ke baad bhi soft rehta hai. Aapko M chahiye ya L?', '10:44'],
+      ['seller', 'Hi! Ye mulmul kurta $49 hai, shipping free. Pure cotton hai, wash ke baad bhi soft rehta hai. Aapko M chahiye ya L?', '10:44'],
       ['buyer', 'Last price?', '10:45'],
-      ['seller', '₹1,299 hi best price hai ji, fabric aur stitching dono achhe hain. Matching dupatta ₹299 mein add kar sakte hain. Ek M rakh doon?', '10:47'],
+      ['seller', '$49 hi best price hai ji, fabric aur stitching dono achhe hain. Matching dupatta $12 mein add kar sakte hain. Ek M rakh doon?', '10:47'],
       ['buyer', 'Ok M bhej do. COD hai?', '10:51'],
-      ['seller', 'Haan, COD available hai. Ya UPI se pay kar dijiye: [your UPI ID]. Total ₹1,299.', '10:52'],
+      ['seller', 'Haan, COD available hai. Ya UPI se pay kar dijiye: [your UPI ID]. Total $49.', '10:52'],
       ['note', 'The price never moved. At each step the buyer got a reason, an option and a one-word question.'],
     ], { title: '“Rate batao” to a confirmed order' }),
 
@@ -92,9 +92,9 @@ module.exports = A({
       p('“Last price?” is often a habit as much as a question. Plenty of buyers ask it out of reflex and will still buy at your price if the answer is calm and gives them a reason. Don’t cut straight away: once you drop the price the first time, buyers learn to ask every time.'),
     ),
 
-    wa('Holding your price', '₹{price} is already my best price on this one, because {reason: fabric, weight, handwork}. What I can do is free shipping, or the matching {item} at ₹{x}. Shall I keep one for you?', 'They asked “last price?”, “best price?” or “kuch kam hoga?”, and you want to keep your price.'),
-    wa('Holding your price (Hinglish)', 'Ji, ₹{price} hi best price hai, kyunki {reason}. Shipping free kar sakte hain. Aapke liye ek rakh doon?', 'The same, for a buyer who wrote in Hinglish.'),
-    wa('Giving a little, in exchange for something', 'If you take two, I can do both for ₹{price for two}. Or ₹{amount} off if you pay by UPI instead of COD. Which would you like?', 'Only if your margin allows it. Give the cut once, and get something that helps you in return: a bigger order, or prepaid instead of COD.'),
+    wa('Holding your price', '${price} is already my best price on this one, because {reason: fabric, weight, handwork}. What I can do is free shipping, or the matching {item} at ${x}. Shall I keep one for you?', 'They asked “last price?”, “best price?” or “kuch kam hoga?”, and you want to keep your price.'),
+    wa('Holding your price (Hinglish)', 'Ji, ${price} hi best price hai, kyunki {reason}. Shipping free kar sakte hain. Aapke liye ek rakh doon?', 'The same, for a buyer who wrote in Hinglish.'),
+    wa('Giving a little, in exchange for something', 'If you take two, I can do both for ${price for two}. Or ${amount} off if you pay by UPI instead of COD. Which would you like?', 'Only if your margin allows it. Give the cut once, and get something that helps you in return: a bigger order, or prepaid instead of COD.'),
 
     text(
       h2('How to handle price objections on WhatsApp'),
@@ -112,7 +112,7 @@ module.exports = A({
     callout('insight', 'Where SellThinker fits', 'When a buyer asks “rate batao” in Instagram DMs or WhatsApp, SellThinker drafts a reply in English, Hindi or Hinglish for you to check, change and send. When they ask how to pay, the draft carries your own UPI ID or payment link, so the money goes straight to you. It doesn’t send anything on its own, it doesn’t create payment links, and it never holds money. It’s not a chatbot.'),
 
     faq([
-      ['What should I reply to a customer?', 'Answer exactly what they asked, in the first line, then give one useful fact and one easy question. For a price question: “The {product} is ₹{price} with free shipping. {One fact}. Which size would you like?”'],
+      ['What should I reply to a customer?', 'Answer exactly what they asked, in the first line, then give one useful fact and one easy question. For a price question: “The {product} is ${price} with free shipping. {One fact}. Which size would you like?”'],
       ['What is the most effective way to handle a price objection?', 'Find out what they’re comparing your price with, explain the one difference that matters for that product, and offer a cheaper option only if you genuinely have one. Holding your price with a clear reason usually works better in chat than a quick discount.'],
       ['Should I give a discount when a customer asks for the last price?', 'Not by default. Hold the price and offer something small that costs you little, like free shipping. If you do give a cut, give it once and in exchange for something: two pieces instead of one, or prepaid instead of COD.'],
       ['Should I put prices in my WhatsApp catalogue?', 'Yes, if your prices are fixed. The WhatsApp Business app lets you show products with prices in a catalogue, which answers some buyers before they ask. Plenty will still ask in chat, so keep the three-line reply ready.'],
