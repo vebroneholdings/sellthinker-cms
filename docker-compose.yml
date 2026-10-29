@@ -1,0 +1,80 @@
+# SellThinker CMS on the website server (/var/www/sellthinker-cms).
+#
+# Its own project, separate from the website and from n8n. Like the website,
+# it publishes no ports: the Traefik already running on this server (owned by
+# the n8n stack, which this file does not touch) routes the CMS's address to
+# it over the shared `root_default` network. The address is CMS_HOST in .env
+# (sellthinker-cms.vashstudios.cloud for now; cms.sellthinker.com later).
+#
+# Secrets live in .env next to this file (never committed): APP_KEYS,
+# API_TOKEN_SALT, ADMIN_JWT_SECRET, TRANSFER_TOKEN_SALT, JWT_SECRET,
+# ENCRYPTION_KEY, DATABASE_PASSWORD, ADMIN_ALLOW, CMS_HOST. See docs/DEPLOY.md.
+name: sellthinker-cms
+
+services:
+  cms:
+    build: .
+    container_name: sellthinker-cms
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: cms-db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi
+      PUBLIC_URL: https://${CMS_HOST:?set CMS_HOST in .env}
+      IS_PROXIED: 'true'
+    volumes:
+      - uploads:/app/public/uploads
+    depends_on:
+      cms-db:
+        condition: service_healthy
+    networks: [root_default, cms]
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=root_default
+      - traefik.http.services.sellthinker-cms.loadbalancer.server.port=1337
+      # Public: the content API the website reads.
+      - traefik.http.routers.sellthinker-cms.rule=Host(`${CMS_HOST}`)
+      - traefik.http.routers.sellthinker-cms.entrypoints=websecure
+      - traefik.http.routers.sellthinker-cms.tls=true
+      - traefik.http.routers.sellthinker-cms.tls.certresolver=mytlschallenge
+      - traefik.http.routers.sellthinker-cms.service=sellthinker-cms
+      # The admin panel, including first-admin registration, only from ADMIN_ALLOW
+      # (an IP range). Set ADMIN_ALLOW=0.0.0.0/0 in .env to open it to everyone.
+      - traefik.http.routers.sellthinker-cms-admin.rule=Host(`${CMS_HOST}`) && PathPrefix(`/admin`)
+      - traefik.http.routers.sellthinker-cms-admin.priority=100
+      - traefik.http.routers.sellthinker-cms-admin.entrypoints=websecure
+      - traefik.http.routers.sellthinker-cms-admin.tls=true
+      - traefik.http.routers.sellthinker-cms-admin.tls.certresolver=mytlschallenge
+      - traefik.http.routers.sellthinker-cms-admin.service=sellthinker-cms
+      - traefik.http.routers.sellthinker-cms-admin.middlewares=sellthinker-cms-admin-allow
+      - traefik.http.middlewares.sellthinker-cms-admin-allow.ipallowlist.sourcerange=${ADMIN_ALLOW:-127.0.0.1/32}
+
+  cms-db:
+    image: postgres:17-alpine
+    container_name: sellthinker-cms-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?set DATABASE_PASSWORD in .env}
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U strapi -d strapi']
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    networks: [cms]
+
+networks:
+  root_default:
+    external: true
+  cms: {}
+
+volumes:
+  db: {}
+  uploads: {}

@@ -1,0 +1,28 @@
+name: Deploy CMS to the website server
+
+# Merging to main rebuilds the CMS on the website VPS (/var/www/sellthinker-cms).
+# Needs repo secrets VPS_HOST, VPS_USER, VPS_SSH_KEY (see docs/DEPLOY.md).
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH into the website server and redeploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          command_timeout: 20m
+          script: |
+            set -e
+            cd /var/www/sellthinker-cms
+            git fetch origin main
+            git checkout main
+            git pull --ff-only origin main
+            docker compose up -d --build
+            docker image prune -f

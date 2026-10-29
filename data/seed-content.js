@@ -1,61 +1,23 @@
 'use strict';
 
 /*
- * Sample content for the SellThinker CMS: every article template and every
- * block has at least one real example, so the website can be built and
- * reviewed against actual entries.
+ * Content the seed loads into the CMS.
  *
- * Copy here is a starting point, not approved copy. Entries carry a
- * `reviewStatus`: "placeholder" (invented example, rewrite before launch),
- * "needs_fact_check" (states facts about other companies or platforms), or
- * "approved". Product claims follow the app as built (vebroneholdings/SellThinker,
- * dev): SellThinker never sends a message on its own, never holds money, and
+ *  - data/articles/*.js   one file per article (the SEO articles live here)
+ *  - showcase articles     below: one per template, together covering every block
+ *  - guides                below: titles and summaries from the reviewed copy
+ *
+ * Every article has a reviewStatus: "placeholder" (example, rewrite before
+ * launch), "needs_fact_check" (states facts about other companies or
+ * platforms), or "approved". `publish: false` keeps an entry as a draft.
+ * Product claims follow the app as built (vebroneholdings/SellThinker, dev):
+ * SellThinker never sends a message on its own, never holds money, and
  * doesn't merge buyers across channels or sync to a CRM.
  */
 
-/* ---------- rich-text helpers (Strapi "blocks" format) ---------- */
-// "**bold**" and "[label](url)" inside a string become formatted text.
-function inline(s) {
-  const out = [];
-  const re = /\*\*(.+?)\*\*|\[(.+?)\]\((.+?)\)/g;
-  let last = 0;
-  let m;
-  while ((m = re.exec(s))) {
-    if (m.index > last) out.push({ type: 'text', text: s.slice(last, m.index) });
-    if (m[1]) out.push({ type: 'text', text: m[1], bold: true });
-    else out.push({ type: 'link', url: m[3], children: [{ type: 'text', text: m[2] }] });
-    last = re.lastIndex;
-  }
-  if (last < s.length) out.push({ type: 'text', text: s.slice(last) });
-  return out.length ? out : [{ type: 'text', text: '' }];
-}
-const p = (s) => ({ type: 'paragraph', children: inline(s) });
-const h2 = (s) => ({ type: 'heading', level: 2, children: inline(s) });
-const h3 = (s) => ({ type: 'heading', level: 3, children: inline(s) });
-const ul = (items) => ({ type: 'list', format: 'unordered', children: items.map((i) => ({ type: 'list-item', children: inline(i) })) });
-const ol = (items) => ({ type: 'list', format: 'ordered', children: items.map((i) => ({ type: 'list-item', children: inline(i) })) });
-
-/* ---------- block helpers ---------- */
-const text = (...nodes) => ({ __component: 'blocks.rich-text', body: nodes });
-const tldr = (t) => ({ __component: 'blocks.tldr', text: t });
-const takeaways = (items, title) => ({ __component: 'blocks.key-takeaways', ...(title ? { title } : {}), items: items.map((t) => ({ text: t })) });
-const callout = (tone, title, body) => ({ __component: 'blocks.callout', tone, title, body });
-const conclusion = (body, opts = {}) => ({ __component: 'blocks.conclusion', body, ...opts });
-const cta = (kind, title, body, extra = {}) => ({ __component: 'blocks.cta', kind, title, body, ...extra });
-const faq = (items, title) => ({ __component: 'blocks.faq', ...(title ? { title } : {}), items: items.map(([question, answer]) => ({ question, answer })) });
-const quote = (q, name, role) => ({ __component: 'blocks.quote', quote: q, name, role });
-const chat = (channel, messages, extra = {}) => ({
-  __component: 'blocks.chat-example',
-  channel,
-  messages: messages.map(([from, t, time]) => ({ from, text: t, time })),
-  ...extra,
-});
-const template = (title, t, extra = {}) => ({ __component: 'blocks.message-template', title, text: t, channel: 'any', ...extra });
-const steps = (items, extra = {}) => ({ __component: 'blocks.steps', items: items.map(([title, body, tip]) => ({ title, body, tip })), ...extra });
-
-const PLACEHOLDER = callout('warning', 'Placeholder article', 'This piece is an example from the design. Replace it with real, approved copy before it goes live.');
-const EARLY = cta('early_access', 'See which chat to open first', 'SellThinker reads every Instagram DM and WhatsApp chat, scores buyer intent and tells you where to act. You send every message yourself.');
-const AUDIT = cta('audit', 'Find out where your chats leak', 'Send us a month of chats and we read them by hand. You get a count of every leak and the three fixes that matter most.');
+const fs = require('fs');
+const path = require('path');
+const { p, h2, h3, ul, ol, text, tldr, takeaways, callout, conclusion, cta, faq, quote, chat, template, steps, PLACEHOLDER, EARLY, AUDIT, A, stub } = require('./helpers');
 
 /* ---------- taxonomy ---------- */
 const topics = [
@@ -67,208 +29,6 @@ const topics = [
   { slug: 'ops', name: 'Operations', description: 'Running a chat-led store day to day.' },
 ];
 const authors = [{ name: 'SellThinker editors', role: 'Editorial', email: 'info@sellthinker.com', bio: 'Notes for sellers who close in chat.' }];
-
-/* ---------- articles ---------- */
-const A = (o) => ({ author: 'SellThinker editors', reviewStatus: 'placeholder', featured: false, ...o });
-
-// Short body for list entries that only have an excerpt so far.
-const stub = (excerpt) => [tldr(excerpt), PLACEHOLDER, EARLY];
-
-const blog = [
-  A({
-    slug: 'day-3-cliff', hub: 'blog', template: 'opinion', topic: 'recovery', displayDate: '2026-09-30', readingMinutes: 7, featured: true,
-    title: 'The day-3 cliff: why most chat sales die in silence',
-    excerpt: "Buyers rarely say no. They just stop replying. Here's what the first 72 hours of quiet actually look like, and the one message that brings most of them back.",
-    body: [
-      tldr('Most lost chat sales are not refusals. The buyer goes quiet, the seller waits to be polite, and by day three the chat has cooled. Treat silence as a question you haven’t answered yet.'),
-      text(
-        p('Ask any seller who closes in DMs where their sales go and you’ll hear the same answer: nowhere. Nobody says no. A buyer asks the price, says “let me think”, and the chat stops.'),
-        h2('Silence is a signal, not an answer'),
-        p('When a buyer stops replying, something specific stalled them: the price, the delivery date, a doubt about the size, or simply a busy afternoon. Each of those has a different best move. Waiting is the only move that never works.'),
-        h2('What changes on day three'),
-        p('In the first day, a short nudge reads as service. By day three the buyer has usually decided, often somewhere else. On Instagram the window to reply is also closing: after seven days a business can no longer message freely.'),
-      ),
-      quote('Quiet isn’t lost. It’s a question you haven’t answered yet.'),
-      takeaways([
-        'Most chat sales end in silence, not in a no.',
-        'Every quiet buyer stalled on something specific. Name it before you nudge.',
-        'Nudge inside the first two days, and never with invented urgency.',
-      ]),
-      conclusion('Watch the quiet chats as closely as the busy ones. The sale you can still save is usually the one that stopped talking yesterday.', { tone: 'warm' }),
-      EARLY,
-    ],
-  }),
-  A({
-    slug: 'manychat-vs-human', hub: 'blog', template: 'comparison', topic: 'instagram', displayDate: '2026-09-24', readingMinutes: 9,
-    title: 'Bot first or human first? What 4,000 Instagram chats told us',
-    excerpt: 'Bots answer fast. Humans close. We split real conversations by who replied first and counted what got paid.',
-    body: stub('Bots answer fast. Humans close. We split real conversations by who replied first and counted what got paid.'),
-  }),
-  A({
-    slug: 'seven-replies', hub: 'blog', template: 'top_list', topic: 'closing', displayDate: '2026-09-18', readingMinutes: 5,
-    title: 'Seven replies that turn “how much?” into a paid order',
-    excerpt: 'Price questions are buying signals. These openers answer the number and move the chat one step closer to the link.',
-    body: [
-      tldr('“How much?” is the most common buying signal in a DM. Answer the number in the first line, then give the buyer one easy next step.'),
-      {
-        __component: 'blocks.ranked-list',
-        title: 'Seven replies, best first',
-        items: [
-          { title: 'Price, then the one thing that makes it worth it', body: '“It’s $128, and it’s the linen one that doesn’t crease. Want it in M?”', badge: 'Most replies' },
-          { title: 'Price with the size question built in', body: '“$64. Which size do you usually take? I’ll check it’s in stock.”' },
-          { title: 'Price plus delivery date', body: '“$90, and it ships tomorrow if you order today.”' },
-          { title: 'Price for the bundle they were eyeing', body: '“The top is $48, or $80 with the matching skirt.”' },
-          { title: 'Price and a photo of it worn', body: 'The number, plus a picture that answers “how does it fit?” before they ask.' },
-          { title: 'Price and how to pay', body: '“$72. I can send you a payment link or take UPI, whichever is easier.”' },
-          { title: 'Price, honestly, when it’s high', body: '“It’s $210. It’s hand-finished, so it costs more than most. Happy to show you how it’s made.”' },
-        ],
-      },
-      chat('instagram', [
-        ['buyer', 'how much is the linen blazer?', '10:12'],
-        ['seller', 'It’s $128, and it’s the linen one that doesn’t crease. Want it in M?', '10:13'],
-        ['buyer', 'yes M please', '10:15'],
-      ], { title: 'What it looks like in a DM' }),
-      callout('tip', 'Never answer with “DM for price”', 'They already did. Making a buyer ask twice is the fastest way to lose them.'),
-      EARLY,
-    ],
-  }),
-  A({
-    slug: 'coexistence', hub: 'blog', template: 'how_to', topic: 'whatsapp', displayDate: '2026-09-11', readingMinutes: 6,
-    title: 'Keep your WhatsApp Business app and still get one inbox',
-    excerpt: 'Coexistence means you don’t have to choose between your phone and one inbox for every chat. What changes, what doesn’t, and the one setting to check.',
-    reviewStatus: 'needs_fact_check',
-    body: stub('Coexistence means you don’t have to choose between your phone and one inbox for every chat. What changes, what doesn’t, and the one setting to check.'),
-  }),
-  A({
-    slug: 'unanswered-question', hub: 'blog', template: 'opinion', topic: 'closing', displayDate: '2026-09-04', readingMinutes: 4,
-    title: 'The most expensive message in your inbox is the one you didn’t answer',
-    excerpt: 'A missed sizing question costs more than a slow one. Why “answer first, sell second” beats every discount we’ve tested.',
-    body: stub('A missed sizing question costs more than a slow one. Why “answer first, sell second” beats every discount we’ve tested.'),
-  }),
-  A({
-    slug: 'sheets-vs-crm', hub: 'blog', template: 'comparison', topic: 'ops', displayDate: '2026-08-28', readingMinutes: 8,
-    title: 'Google Sheet or CRM? What a small chat store actually needs',
-    excerpt: 'Most CRMs are built for sales departments with pipelines and quotas. Most chat stores have a sheet and a founder. When to stay, when to move.',
-    body: [
-      tldr('A sheet records what happened. A CRM manages a pipeline. Neither tells you which of today’s 200 chats to open first, and for a chat-led store that’s the question that costs money.'),
-      {
-        __component: 'blocks.grid-table',
-        title: 'What each one does for a chat seller',
-        style: 'comparison',
-        columns: [{ label: 'Google Sheet' }, { label: 'CRM' }, { label: 'SellThinker', highlight: true }],
-        rows: [
-          { label: 'Reads your Instagram and WhatsApp chats', cells: [{ mark: 'no' }, { mark: 'partial', value: 'With add-ons' }, { mark: 'yes' }] },
-          { label: 'Says which chat to answer first', cells: [{ mark: 'no' }, { mark: 'no' }, { mark: 'yes' }] },
-          { label: 'Flags buyers who went quiet', cells: [{ mark: 'no' }, { mark: 'partial', value: 'If you log them' }, { mark: 'yes' }] },
-          { label: 'Pipelines, quotas, forecasts', cells: [{ mark: 'no' }, { mark: 'yes' }, { mark: 'no' }] },
-          { label: 'Setup time', cells: [{ value: 'Minutes' }, { value: 'Weeks' }, { value: 'An afternoon' }] },
-        ],
-        caption: 'SellThinker is not a CRM and doesn’t sync to one. It reads chats and tells you what to do next.',
-      },
-      {
-        __component: 'blocks.pros-cons',
-        title: 'Staying on a sheet',
-        pros: [{ text: 'Free, and everyone already knows how it works.' }, { text: 'Good for orders once they’re paid.' }],
-        cons: [{ text: 'Only as current as the last time someone typed into it.' }, { text: 'Can’t tell you who’s waiting on a reply right now.' }],
-      },
-      conclusion('Keep the sheet for orders. Don’t buy a CRM to solve a reply-order problem.', { tone: 'ink' }),
-      EARLY,
-    ],
-  }),
-  A({
-    slug: 'buyer-words', hub: 'blog', template: 'how_to', topic: 'catalog', displayDate: '2026-08-21', readingMinutes: 6,
-    title: 'Your buyers don’t use your product names. Here’s how to catch up',
-    excerpt: '“The blue one from your story” is a product. Building a list of the phrases buyers use cuts the back-and-forth in half.',
-    body: stub('“The blue one from your story” is a product. Building a list of the phrases buyers use cuts the back-and-forth in half.'),
-  }),
-  A({
-    slug: 'label-studio', hub: 'blog', template: 'case_study', topic: 'recovery', displayDate: '2026-08-14', readingMinutes: 7,
-    title: 'How a two-person label won back quiet buyers in one week',
-    excerpt: 'No new ads, no discounts on everything. Just the right nudge, at the right hour, to the buyers most worth chasing.',
-    body: [
-      tldr('A sample case study showing the shape of the template: the situation, what changed, and what happened, in that order.'),
-      PLACEHOLDER,
-      {
-        __component: 'blocks.timeline',
-        title: 'The week',
-        events: [
-          { when: 'Monday', title: 'Eleven quiet buyers on the list', body: 'Sorted by who was worth chasing first.' },
-          { when: 'Tuesday', title: 'Five nudges, each tied to why the buyer stalled', body: 'Price questions got the value line. Size doubts got the fit answer.' },
-          { when: 'Friday', title: 'Three came back', body: 'Two paid the same day.' },
-        ],
-      },
-      EARLY,
-    ],
-  }),
-  A({
-    slug: 'dm-mistakes', hub: 'blog', template: 'top_list', topic: 'instagram', displayDate: '2026-08-07', readingMinutes: 5,
-    title: 'Five DM habits quietly costing you sales',
-    excerpt: 'Voice notes, “DM for price”, and replying at midnight. The small habits buyers notice before you do.',
-    body: stub('Voice notes, “DM for price”, and replying at midnight. The small habits buyers notice before you do.'),
-  }),
-  A({
-    slug: 'payment-links', hub: 'blog', template: 'how_to', topic: 'closing', displayDate: '2026-07-31', readingMinutes: 5,
-    title: 'Send the payment link before they ask for it',
-    excerpt: 'The moment a buyer confirms a size is the moment to close. How to spot it, and what to send so the link lands right.',
-    body: [
-      tldr('Send your payment link the moment a buyer confirms the product and the variant. Not before, and never when they’ve asked for cash on delivery.'),
-      steps([
-        ['Confirm the exact item', 'Size, colour and quantity. If there are two blue shirts, ask which one before anything else.', 'Ambiguous? Ask. Guessing the product is the costliest mistake in chat selling.'],
-        ['Check it’s in stock', 'Say so in the same message: “The M is in stock.”'],
-        ['Send the link with the total', '“Here’s your link for the Linen Blazer, $128 all-in. Ships once it’s paid.”'],
-        ['Follow up once if it sits unpaid', 'A day later: “Your link still works if you’d like it.” No pressure, no invented deadline.'],
-      ], { title: 'Four steps', totalTime: '2 minutes' }),
-      chat('whatsapp', [
-        ['buyer', 'ok I’ll take the M', '14:02'],
-        ['seller', 'The M is in stock. Here’s your link for the Linen Blazer, $128 all-in: your-store.com/pay', '14:03'],
-        ['note', 'The buyer confirmed size, so this is the moment to send the link.', ''],
-      ]),
-      callout('warning', 'Cash on delivery?', 'If a buyer asked for COD, don’t send a payment link. Confirm the address and the delivery date instead.'),
-      template('The unpaid-link follow-up', 'Hi! Your link for the {product} still works whenever you’re ready. Anything I can help with first?', { whenToUse: 'A day after a link was sent and not paid.' }),
-      EARLY,
-    ],
-  }),
-  A({
-    slug: 'promo-or-scarcity', hub: 'blog', template: 'comparison', topic: 'recovery', displayDate: '2026-07-24', readingMinutes: 6,
-    title: 'Discount or scarcity: which brings a quiet buyer back?',
-    excerpt: 'We compared “10% off” against “only 3 left in your size” in recovery nudges. One of them wins by a lot, and it isn’t the cheaper one.',
-    body: stub('We compared “10% off” against “only 3 left in your size” in recovery nudges. One of them wins by a lot, and it isn’t the cheaper one.'),
-  }),
-  A({
-    slug: 'reply-hours', hub: 'blog', template: 'top_list', topic: 'ops', displayDate: '2026-07-17', readingMinutes: 4,
-    title: 'Six numbers every chat seller should check on Monday',
-    excerpt: 'Chats in, chats closed, chats that went quiet, first-reply time by day. Six numbers, one minute, and you know where the week went.',
-    body: stub('Chats in, chats closed, chats that went quiet, first-reply time by day. Six numbers, one minute, and you know where the week went.'),
-  }),
-  A({
-    slug: 'whatsapp-window', hub: 'blog', template: 'explainer', topic: 'whatsapp', displayDate: '2026-07-10', readingMinutes: 5,
-    title: 'The 24-hour window: what you can still send after a buyer goes quiet',
-    excerpt: 'WhatsApp and Instagram both close the door after a while. What the rules are, and how to stay inside them without sounding like a bot.',
-    reviewStatus: 'needs_fact_check',
-    body: [
-      tldr('WhatsApp lets a business reply freely for 24 hours after the buyer’s last message; after that, only pre-approved templates. Instagram’s window is seven days. Follow up inside the window.'),
-      {
-        __component: 'blocks.spec-table',
-        title: 'The windows at a glance',
-        rows: [
-          { label: 'WhatsApp', value: '24 hours after the buyer’s last message. After that, approved templates only.' },
-          { label: 'Instagram', value: '7 days after the buyer’s last message. After that, no new messages.' },
-          { label: 'What resets it', value: 'The buyer sending you a new message.' },
-        ],
-        note: 'Check Meta’s current rules before publishing; they change.',
-      },
-      callout('insight', 'Why this matters for follow-ups', 'A nudge on day two lands inside both windows. A nudge on day eight can’t be sent on Instagram at all.'),
-      { __component: 'blocks.sources', items: [{ title: 'WhatsApp Business Platform: messaging windows', publisher: 'Meta', url: 'https://developers.facebook.com/docs/whatsapp' }] },
-      EARLY,
-    ],
-  }),
-  A({
-    slug: 'automation-myth', hub: 'blog', template: 'opinion', topic: 'ops', displayDate: '2026-07-03', readingMinutes: 6,
-    title: 'Automate the sorting, not the selling',
-    excerpt: 'Every tool promises to reply for you. We think the reply is the part worth keeping. Here’s what we automate instead.',
-    body: stub('Every tool promises to reply for you. We think the reply is the part worth keeping. Here’s what we automate instead.'),
-  }),
-];
 
 /* Showcase articles: one per remaining template, together covering every block. */
 const CALCULATOR = `<!doctype html><html><head><meta charset="utf-8"><style>
@@ -328,7 +88,7 @@ const showcase = [
     ],
   }),
   A({
-    slug: 'end-of-day-chat-checklist', hub: 'blog', template: 'checklist', topic: 'ops', displayDate: '2026-10-16', readingMinutes: 3,
+    slug: 'end-of-day-chat-checklist', hub: 'blog', template: 'checklist', topic: 'ops', displayDate: '2026-10-16', readingMinutes: 3, reviewStatus: 'approved',
     title: 'The end-of-day checklist for chat sellers',
     excerpt: 'Eight things to check before you put the phone down, so nobody ready to pay waits until tomorrow.',
     body: [
@@ -415,7 +175,7 @@ const showcase = [
   }),
   A({
     slug: 'follow-up-message', hub: 'blog', template: 'message_templates', topic: 'recovery', displayDate: '2026-10-22', readingMinutes: 7, reviewStatus: 'approved',
-    title: 'Follow-up messages for a customer who stopped replying',
+    title: 'Follow-up message to a customer who stopped replying',
     excerpt: 'Nine follow-ups, one for each reason a buyer goes quiet. Copy, change the product, send.',
     body: [
       tldr('Don’t send the same nudge to every quiet buyer. Find why they stalled and answer that. No apologies, no invented urgency, no discount by default.'),
@@ -489,24 +249,6 @@ const showcase = [
   }),
 ];
 
-/* ---------- news: titles and summaries from the reviewed copy (data/resources-copy.json) ---------- */
-const COPY = require('./resources-copy.json');
-const news = COPY.news.map((n) =>
-  A({
-    slug: n.slug,
-    hub: 'news',
-    template: n.stream === 'sellthinker' ? 'product_update' : 'news_post',
-    topic: n.area === 'whatsapp' ? 'whatsapp' : n.area === 'instagram' ? 'instagram' : 'ops',
-    displayDate: n.date,
-    readingMinutes: 1,
-    reviewStatus: n.stream === 'sellthinker' ? 'placeholder' : 'needs_fact_check',
-    title: n.title || n.area,
-    excerpt: n.excerpt,
-    news: { stream: n.stream, kind: n.kind, area: n.area, version: n.version, source: n.source, take: n.take, featureLink: n.featureLink },
-    body: [text(p(n.excerpt)), ...(n.take ? [callout('insight', 'Our take', n.take)] : [])],
-  })
-);
-
 /* ---------- guides ---------- */
 const guide = (o) => A({ hub: 'guides', template: 'guide', topic: 'ops', ...o });
 const guides = [
@@ -542,29 +284,20 @@ const guides = [
   guide({ slug: 'monday', displayDate: '2026-10-01', readingMinutes: 5, guide: { stage: 'grow', stepsCount: 3 }, title: 'Read your Monday numbers', excerpt: 'A few counts, one leak, one thing to try. Then check it worked.', body: stub('A few counts, one leak, one thing to try. Then check it worked.') }),
 ];
 
-const global = {
-  siteName: 'SellThinker',
-  siteDescription: 'Decision guidance for sellers who close in chat. Stop guessing which conversation to open first.',
-  defaultSeo: { metaTitle: 'SellThinker', metaDescription: 'SellThinker reads every Instagram DM and WhatsApp chat, scores buyer intent, and tells you which chat to open first. Not a chatbot: you send every message.' },
-};
+/* ---------- one file per article in data/articles ---------- */
+const articleDir = path.join(__dirname, 'articles');
+const fromFiles = fs.existsSync(articleDir)
+  ? fs.readdirSync(articleDir).filter((f) => f.endsWith('.js')).sort().map((f) => require(path.join(articleDir, f)))
+  : [];
 
-/* Reviewed copy wins: titles and summaries come from data/resources-copy.json.
-   Blog posts the reviewed copy dropped stay in the CMS as unpublished drafts. */
-const isStub = (body) => body.length === 3 && body[1] === PLACEHOLDER && body[2] === EARLY;
-const postCopy = Object.fromEntries(COPY.posts.map((c) => [c.slug, c]));
-for (const a of [...blog, ...showcase]) {
-  const c = postCopy[a.slug];
-  if (!c) {
-    if (blog.includes(a)) a.publish = false;
-    continue;
-  }
-  a.title = c.title;
-  a.excerpt = c.excerpt;
-  a.featured = c.featured;
-  if (isStub(a.body)) a.body = stub(c.excerpt);
-}
+/* Showcase entries that are only placeholders stay as drafts: they exist to demo blocks. */
+for (const a of showcase) if (a.reviewStatus === 'placeholder') a.publish = false;
+
+/* Guide titles and summaries come from the reviewed copy (npm run import:resources). */
+const COPY = require('./resources-copy.json');
 const GUIDE_ALIAS = { roles: 'team' }; // our slug -> the copy file's slug
 const guideCopy = Object.fromEntries(COPY.guides.map((c) => [c.slug, c]));
+const isStub = (body) => body.length === 3 && body[1] === PLACEHOLDER && body[2] === EARLY;
 for (const g of guides) {
   const c = guideCopy[GUIDE_ALIAS[g.slug] || g.slug];
   if (!c) continue;
@@ -573,12 +306,23 @@ for (const g of guides) {
   if (isStub(g.body)) g.body = stub(c.excerpt);
 }
 
-// Slugs from earlier seeds that no longer exist; the seed deletes them.
+/* Deleted on the next seed: the design's placeholder blog posts and news items
+   (removed 2026-10-29 at the user's request), and slugs from earlier seeds. */
+const DESIGN_POSTS = ['day-3-cliff', 'manychat-vs-human', 'seven-replies', 'coexistence', 'unanswered-question', 'sheets-vs-crm',
+  'buyer-words', 'label-studio', 'dm-mistakes', 'payment-links', 'promo-or-scarcity', 'reply-hours', 'whatsapp-window', 'automation-myth'];
 const retired = [
+  ...DESIGN_POSTS,
+  ...COPY.news.map((n) => n.slug),
   'follow-up-message-customer-stopped-replying',
   'one-place-for-every-chat', 'quiet-buyers-one-list', 'insights-launch', 'specs-from-questions', 'priority-faster',
   'access-waves', 'snooze-to-date', 'emoji-reactions-fold', 'whatsapp-coexistence-markets', 'instagram-7-day-window',
   'chat-first-touchpoint', 'per-message-pricing',
-];
+].filter((slug) => !fromFiles.some((a) => a.slug === slug));
 
-module.exports = { topics, authors, articles: [...blog, ...showcase, ...news, ...guides], retired, global };
+const global = {
+  siteName: 'SellThinker',
+  siteDescription: 'Decision guidance for sellers who close in chat. Stop guessing which conversation to open first.',
+  defaultSeo: { metaTitle: 'SellThinker', metaDescription: 'SellThinker reads every Instagram DM and WhatsApp chat, scores buyer intent, and tells you which chat to open first. Not a chatbot: you send every message.' },
+};
+
+module.exports = { topics, authors, articles: [...fromFiles, ...showcase, ...guides], retired, global };
