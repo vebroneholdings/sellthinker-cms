@@ -3,8 +3,8 @@
 The CMS runs on the **website server** (Hostinger VPS `vashstudios.cloud`,
 72.61.235.222), next to the website. Its address is `CMS_HOST` in the server's
 `.env`: **https://sellthinker-cms.vashstudios.cloud** for now (that domain's DNS
-is in the same Hostinger account as the server), moving to
-`cms.sellthinker.com` later by adding that DNS record and changing `CMS_HOST`.
+is managed in Cloudflare), moving to `cms.sellthinker.com` later by adding that
+DNS record and changing `CMS_HOST`.
 
 Never on the app server (`srv2025425`), and nothing here touches the n8n stack
 on the website server: the CMS is its own Docker Compose project. It's reached
