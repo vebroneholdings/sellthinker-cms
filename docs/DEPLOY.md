@@ -19,10 +19,13 @@ container, the same way the website is.
 
 ## One-time setup
 
-1. **DNS.** An A record for `CMS_HOST` pointing at 72.61.235.222: today
-   `sellthinker-cms` in the `vashstudios.cloud` zone (studios account); later `cms`
-   in the `sellthinker.com` zone (vebroneholdings account). Traefik gets the HTTPS
-   certificate on its own once the name resolves.
+1. **DNS.** An A record for `CMS_HOST` pointing at 72.61.235.222, set to
+   **DNS only** (no proxy). Today that's `sellthinker-cms` in the `vashstudios.cloud`
+   zone, which is served by **Cloudflare** (its nameservers), not Hostinger; a record
+   added in Hostinger's DNS editor for that domain has no effect. Later it's `cms` in
+   the `sellthinker.com` zone (vebroneholdings Hostinger account). Traefik gets the
+   HTTPS certificate on its own once the name resolves; with Cloudflare's proxy on,
+   that certificate check and the admin IP lock both fail.
 2. **Code.** As `vash` on the server:
    `git clone https://github.com/vebroneholdings/sellthinker-cms.git /var/www/sellthinker-cms`
 3. **Secrets.** Create `/var/www/sellthinker-cms/.env` (mode 600) with fresh random
