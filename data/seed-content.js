@@ -54,7 +54,7 @@ const showcase = [
   A({
     slug: 'hot-warm-cold-leads-whatsapp-instagram', hub: 'blog', template: 'explainer', topic: 'closing', displayDate: '2026-10-20', readingMinutes: 6, reviewStatus: 'approved',
     title: 'Hot, warm and cold leads for WhatsApp and Instagram sellers',
-    excerpt: 'What hot, warm and cold mean when your leads are chats, not form fills, and how the score decides which chat you open first.',
+    excerpt: 'What hot, warm and cold mean when your leads are chats, not form fills, and how a score from 0 to 100 decides which chat you open first.',
     body: [
       tldr('Every sales chat gets a hot, warm or cold badge. Hot means close to buying, warm means interested, cold can wait. It comes from what the buyer actually said, not from guesswork.'),
       { __component: 'blocks.definition', term: 'Hot lead', short: 'A buyer who is close to paying: they’ve named a product and asked to buy, or said so in two messages.', more: 'One question on its own can’t make a chat hot. It takes a clear ask, like “send me the link”.' },

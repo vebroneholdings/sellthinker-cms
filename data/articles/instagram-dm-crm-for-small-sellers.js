@@ -32,7 +32,7 @@ module.exports = A({
       h2('Sell by chat: what actually needs tracking'),
       p('When you sell by chat, the deal is the conversation. Four things matter:'),
       ul([
-        '**Who is ready to pay.** A score from the buyer’s own words, shown as Hot (close to buying), Warm (interested) or Cold (can wait). One question alone can’t make a chat hot.',
+        '**Who is ready to pay.** A 0–100 score from the buyer’s own words, shown as Hot (close to buying), Warm (interested) or Cold (can wait). One question alone can’t make a chat hot.',
         '**Where each sale stands.** Needs reply → Ready to close → Payment sent → Closed, with Recovery and Lost for the ones that slip.',
         '**Who went quiet, and why.** Recovery shows the likely reason (a price worry, an unpaid link, a fit doubt…) and one best move.',
         '**Which chat to open first.** Priority Today: the chats to answer first, Close → Protect → Business → Rescue → Reply.',
