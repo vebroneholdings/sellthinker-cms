@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_elements_steps",
+  "info": {
+    "displayName": "Step",
+    "icon": "stack",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tip": {
+      "type": "text"
+    }
+  }
+}

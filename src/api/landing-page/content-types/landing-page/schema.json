@@ -1,0 +1,119 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "Feature landing page",
+    "description": "The feature pages (Unified inbox, Priority Today…). Slug = the page URL."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "eyebrow": {
+      "type": "string"
+    },
+    "lede": {
+      "type": "text"
+    },
+    "demoKey": {
+      "type": "enumeration",
+      "enum": [
+        "unified_inbox",
+        "conversation_stage",
+        "daily_priority",
+        "lead_scoring",
+        "recovery",
+        "product_catalog",
+        "integrations",
+        "pipeline",
+        "none"
+      ],
+      "default": "none"
+    },
+    "demoTitle": {
+      "type": "string"
+    },
+    "pillarsLabel": {
+      "type": "string"
+    },
+    "pillars": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.title-text"
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.title-text"
+    },
+    "howNote": {
+      "type": "text"
+    },
+    "outcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.text-item"
+    },
+    "tieInsLabel": {
+      "type": "string"
+    },
+    "tieIns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.text-item"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.faq-item"
+    },
+    "extraSections": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.rich-text",
+        "blocks.tldr",
+        "blocks.key-takeaways",
+        "blocks.callout",
+        "blocks.conclusion",
+        "blocks.spec-table",
+        "blocks.grid-table",
+        "blocks.checklist",
+        "blocks.steps",
+        "blocks.ranked-list",
+        "blocks.pros-cons",
+        "blocks.stats",
+        "blocks.quote",
+        "blocks.faq",
+        "blocks.chat-example",
+        "blocks.message-template",
+        "blocks.before-after",
+        "blocks.explainer",
+        "blocks.definition",
+        "blocks.timeline",
+        "blocks.image",
+        "blocks.video",
+        "blocks.html-embed",
+        "blocks.cta",
+        "blocks.related-links",
+        "blocks.sources"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  },
+  "pluginOptions": {}
+}

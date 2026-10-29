@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_blocks_ctas",
+  "info": {
+    "displayName": "Call to action",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "kind": {
+      "type": "enumeration",
+      "enum": [
+        "early_access",
+        "audit",
+        "link"
+      ],
+      "default": "early_access"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonUrl": {
+      "type": "string"
+    }
+  }
+}

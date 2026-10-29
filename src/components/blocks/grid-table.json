@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_grid_tables",
+  "info": {
+    "displayName": "Grid table",
+    "icon": "grid",
+    "description": "Columns and rows. Cells can hold text, a tick/cross mark, or both."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "style": {
+      "type": "enumeration",
+      "enum": [
+        "comparison",
+        "data"
+      ],
+      "default": "comparison"
+    },
+    "columns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.table-column"
+    },
+    "rows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.table-row"
+    },
+    "caption": {
+      "type": "text"
+    }
+  }
+}

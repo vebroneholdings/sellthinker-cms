@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_blocks_chat_examples",
+  "info": {
+    "displayName": "Chat example",
+    "icon": "message",
+    "description": "A short Instagram or WhatsApp conversation, drawn as chat bubbles."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "enumeration",
+      "enum": [
+        "instagram",
+        "whatsapp"
+      ],
+      "default": "instagram"
+    },
+    "messages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.chat-message"
+    },
+    "caption": {
+      "type": "text"
+    }
+  }
+}

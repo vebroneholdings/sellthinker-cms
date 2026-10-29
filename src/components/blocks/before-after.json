@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_blocks_before_afters",
+  "info": {
+    "displayName": "Before and after",
+    "icon": "arrowRight",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "beforeLabel": {
+      "type": "string",
+      "default": "Before"
+    },
+    "afterLabel": {
+      "type": "string",
+      "default": "After"
+    },
+    "before": {
+      "type": "text",
+      "required": true
+    },
+    "after": {
+      "type": "text",
+      "required": true
+    },
+    "why": {
+      "type": "text"
+    }
+  }
+}

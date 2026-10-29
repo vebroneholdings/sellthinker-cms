@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_ranked_lists",
+  "info": {
+    "displayName": "Ranked list",
+    "icon": "star",
+    "description": "Numbered items for top-N lists."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "numbered": {
+      "type": "boolean",
+      "default": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.ranked-item"
+    }
+  }
+}

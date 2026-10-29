@@ -1,0 +1,63 @@
+{
+  "collectionName": "components_meta_newss",
+  "info": {
+    "displayName": "News details",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "stream": {
+      "type": "enumeration",
+      "enum": [
+        "sellthinker",
+        "industry"
+      ],
+      "default": "sellthinker"
+    },
+    "kind": {
+      "type": "enumeration",
+      "enum": [
+        "launch",
+        "improvement",
+        "fix",
+        "company",
+        "platform",
+        "policy",
+        "market"
+      ],
+      "default": "improvement"
+    },
+    "area": {
+      "type": "enumeration",
+      "enum": [
+        "inbox",
+        "priority",
+        "recovery",
+        "catalog",
+        "insights",
+        "integrations",
+        "company",
+        "whatsapp",
+        "instagram",
+        "commerce",
+        "payments"
+      ]
+    },
+    "version": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "sourceUrl": {
+      "type": "string"
+    },
+    "take": {
+      "type": "text"
+    },
+    "featureLink": {
+      "type": "string"
+    }
+  }
+}

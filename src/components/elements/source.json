@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_elements_sources",
+  "info": {
+    "displayName": "Source",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}

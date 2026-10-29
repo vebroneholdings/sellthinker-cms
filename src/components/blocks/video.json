@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_videos",
+  "info": {
+    "displayName": "Video",
+    "icon": "play",
+    "description": "YouTube or Vimeo link."
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "caption": {
+      "type": "string"
+    }
+  }
+}

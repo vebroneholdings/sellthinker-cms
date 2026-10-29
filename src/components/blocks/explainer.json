@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_blocks_explainers",
+  "info": {
+    "displayName": "Visual explainer",
+    "icon": "lightbulb",
+    "description": "Cards in a grid, a flow (A → B → C) or numbered."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "intro": {
+      "type": "text"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "grid",
+        "flow",
+        "numbered"
+      ],
+      "default": "grid"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.explainer-card"
+    }
+  }
+}

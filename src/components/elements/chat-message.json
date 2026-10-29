@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_elements_chat_messages",
+  "info": {
+    "displayName": "Chat message",
+    "icon": "message",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "from": {
+      "type": "enumeration",
+      "enum": [
+        "buyer",
+        "seller",
+        "note"
+      ],
+      "default": "buyer"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "time": {
+      "type": "string"
+    }
+  }
+}

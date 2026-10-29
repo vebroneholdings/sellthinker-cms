@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_callouts",
+  "info": {
+    "displayName": "Callout",
+    "icon": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tone": {
+      "type": "enumeration",
+      "enum": [
+        "tip",
+        "note",
+        "warning",
+        "insight"
+      ],
+      "default": "note"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

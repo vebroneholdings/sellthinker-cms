@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_spec_tables",
+  "info": {
+    "displayName": "Vertical table",
+    "icon": "layout",
+    "description": "Two columns: a label and its value, row by row."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "rows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.key-value"
+    },
+    "note": {
+      "type": "text"
+    }
+  }
+}

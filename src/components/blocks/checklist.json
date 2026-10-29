@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_blocks_checklists",
+  "info": {
+    "displayName": "Checklist",
+    "icon": "check",
+    "description": "Readers can tick items; progress stays in their browser."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "intro": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.check-item"
+    },
+    "saveProgress": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

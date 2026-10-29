@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_stepss",
+  "info": {
+    "displayName": "Steps",
+    "icon": "stack",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "totalTime": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.step"
+    }
+  }
+}

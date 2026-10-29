@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_definitions",
+  "info": {
+    "displayName": "Definition",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "term": {
+      "type": "string",
+      "required": true
+    },
+    "short": {
+      "type": "text",
+      "required": true
+    },
+    "more": {
+      "type": "text"
+    }
+  }
+}

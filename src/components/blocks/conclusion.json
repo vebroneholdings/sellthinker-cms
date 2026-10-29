@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_conclusions",
+  "info": {
+    "displayName": "Conclusion",
+    "icon": "flag",
+    "description": "Coloured closing block, optionally with a button."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "The bottom line"
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    },
+    "tone": {
+      "type": "enumeration",
+      "enum": [
+        "brand",
+        "warm",
+        "ink",
+        "sky"
+      ],
+      "default": "brand"
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonUrl": {
+      "type": "string"
+    }
+  }
+}

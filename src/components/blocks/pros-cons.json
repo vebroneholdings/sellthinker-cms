@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_blocks_pros_conss",
+  "info": {
+    "displayName": "Pros and cons",
+    "icon": "thumbUp",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "prosLabel": {
+      "type": "string",
+      "default": "Pros"
+    },
+    "consLabel": {
+      "type": "string",
+      "default": "Cons"
+    },
+    "pros": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.text-item"
+    },
+    "cons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.text-item"
+    }
+  }
+}

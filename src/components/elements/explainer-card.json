@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_explainer_cards",
+  "info": {
+    "displayName": "Explainer card",
+    "icon": "lightbulb",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "default": "✦"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text"
+    }
+  }
+}

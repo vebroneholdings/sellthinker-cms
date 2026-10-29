@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_tldrs",
+  "info": {
+    "displayName": "TL;DR",
+    "icon": "bulletList",
+    "description": "One-paragraph summary at the top."
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

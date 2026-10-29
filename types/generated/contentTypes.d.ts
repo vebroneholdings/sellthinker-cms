@@ -475,7 +475,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
-    description: 'Create your blog content';
+    description: 'Every Resources piece: blog posts, news, guides and tools.';
     displayName: 'Article';
     pluralName: 'articles';
     singularName: 'article';
@@ -485,27 +485,98 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
+    body: Schema.Attribute.DynamicZone<
+      [
+        'blocks.rich-text',
+        'blocks.tldr',
+        'blocks.key-takeaways',
+        'blocks.callout',
+        'blocks.conclusion',
+        'blocks.spec-table',
+        'blocks.grid-table',
+        'blocks.checklist',
+        'blocks.steps',
+        'blocks.ranked-list',
+        'blocks.pros-cons',
+        'blocks.stats',
+        'blocks.quote',
+        'blocks.faq',
+        'blocks.chat-example',
+        'blocks.message-template',
+        'blocks.before-after',
+        'blocks.explainer',
+        'blocks.definition',
+        'blocks.timeline',
+        'blocks.image',
+        'blocks.video',
+        'blocks.html-embed',
+        'blocks.cta',
+        'blocks.related-links',
+        'blocks.sources',
+      ]
     >;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
-    cover: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    cover: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
+    displayDate: Schema.Attribute.Date;
+    excerpt: Schema.Attribute.Text &
+      Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 80;
+        maxLength: 320;
       }>;
+    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    guide: Schema.Attribute.Component<'meta.guide', false>;
+    hub: Schema.Attribute.Enumeration<['blog', 'news', 'guides', 'tools']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'blog'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::article.article'
     > &
       Schema.Attribute.Private;
+    news: Schema.Attribute.Component<'meta.news', false>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
+    readingMinutes: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    reviewStatus: Schema.Attribute.Enumeration<
+      ['placeholder', 'needs_fact_check', 'approved']
+    > &
+      Schema.Attribute.DefaultTo<'placeholder'>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    template: Schema.Attribute.Enumeration<
+      [
+        'explainer',
+        'opinion',
+        'news_post',
+        'product_update',
+        'guide',
+        'how_to',
+        'top_list',
+        'checklist',
+        'comparison',
+        'case_study',
+        'tool',
+        'glossary',
+        'faq_page',
+        'data_report',
+        'message_templates',
+        'myth_vs_fact',
+        'roundup',
+        'interview',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'explainer'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -526,6 +597,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   attributes: {
     articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    bio: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -538,6 +610,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -602,6 +675,92 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
+  collectionName: 'landing_pages';
+  info: {
+    description: 'The feature pages (Unified inbox, Priority Today\u2026). Slug = the page URL.';
+    displayName: 'Feature landing page';
+    pluralName: 'landing-pages';
+    singularName: 'landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    demoKey: Schema.Attribute.Enumeration<
+      [
+        'unified_inbox',
+        'conversation_stage',
+        'daily_priority',
+        'lead_scoring',
+        'recovery',
+        'product_catalog',
+        'integrations',
+        'pipeline',
+        'none',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'none'>;
+    demoTitle: Schema.Attribute.String;
+    extraSections: Schema.Attribute.DynamicZone<
+      [
+        'blocks.rich-text',
+        'blocks.tldr',
+        'blocks.key-takeaways',
+        'blocks.callout',
+        'blocks.conclusion',
+        'blocks.spec-table',
+        'blocks.grid-table',
+        'blocks.checklist',
+        'blocks.steps',
+        'blocks.ranked-list',
+        'blocks.pros-cons',
+        'blocks.stats',
+        'blocks.quote',
+        'blocks.faq',
+        'blocks.chat-example',
+        'blocks.message-template',
+        'blocks.before-after',
+        'blocks.explainer',
+        'blocks.definition',
+        'blocks.timeline',
+        'blocks.image',
+        'blocks.video',
+        'blocks.html-embed',
+        'blocks.cta',
+        'blocks.related-links',
+        'blocks.sources',
+      ]
+    >;
+    eyebrow: Schema.Attribute.String;
+    faq: Schema.Attribute.Component<'elements.faq-item', true>;
+    howNote: Schema.Attribute.Text;
+    lede: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landing-page.landing-page'
+    > &
+      Schema.Attribute.Private;
+    outcomes: Schema.Attribute.Component<'elements.text-item', true>;
+    pillars: Schema.Attribute.Component<'elements.title-text', true>;
+    pillarsLabel: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    steps: Schema.Attribute.Component<'elements.title-text', true>;
+    tieIns: Schema.Attribute.Component<'elements.text-item', true>;
+    tieInsLabel: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1124,6 +1283,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

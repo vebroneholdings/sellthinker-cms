@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_elements_table_rows",
+  "info": {
+    "displayName": "Table row",
+    "icon": "grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "cells": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.table-cell"
+    }
+  }
+}

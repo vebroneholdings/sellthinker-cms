@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_blocks_message_templates",
+  "info": {
+    "displayName": "Message template",
+    "icon": "write",
+    "description": "A reply readers can copy with one tap."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "channel": {
+      "type": "enumeration",
+      "enum": [
+        "instagram",
+        "whatsapp",
+        "any"
+      ],
+      "default": "any"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "whenToUse": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,677 @@
+[
+  {
+    "slug": "unified-inbox",
+    "title": "Instagram DMs and WhatsApp chats in one list.",
+    "eyebrow": "Unified inbox",
+    "lede": "Stop switching apps mid-sale. Every DM, story reply and WhatsApp chat lands in one list, each marked with the app it came from, and you can sort it by who's closest to converting.",
+    "demoKey": "unified_inbox",
+    "demoTitle": "Inbox walkthrough",
+    "pillarsLabel": "What makes us different",
+    "pillars": [
+      {
+        "title": "See the buyers before the spam",
+        "text": "When someone sends a 🔥 on your story, SellThinker tucks it out of the way. When someone asks “Is this still available?”, it stays front and centre."
+      },
+      {
+        "title": "Reply on the app the buyer used",
+        "text": "Each chat shows whether it came from Instagram or WhatsApp, and your reply goes back the same way. Nothing to copy between apps."
+      },
+      {
+        "title": "Made for the person answering the chats",
+        "text": "SellThinker is built to be run by whoever answers your chats: you, the people who sell alongside you, or a fulfilment partner you work with."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Connect both apps",
+        "text": "Instagram with Meta's official login. WhatsApp through Meta's business platform, and where Meta allows it, you keep using the app on your phone."
+      },
+      {
+        "title": "Your chats come in",
+        "text": "Recent chats come in first. New messages arrive with their stage and score already attached."
+      },
+      {
+        "title": "Reply where it suits you",
+        "text": "Reply from SellThinker or from your phone. Either way, the chat stays up to date."
+      }
+    ],
+    "howNote": "",
+    "outcomes": [
+      {
+        "text": "No more switching between Instagram and WhatsApp during a busy launch hour."
+      },
+      {
+        "text": "No more “I missed that DM” because it was in the other app."
+      },
+      {
+        "text": "See every buyer still waiting on you, oldest first."
+      },
+      {
+        "text": "An easier way to spot and select the conversations that matter."
+      }
+    ],
+    "tieInsLabel": "",
+    "tieIns": [
+      {
+        "text": "conversation-stage-analysis"
+      },
+      {
+        "text": "daily-priority-list"
+      },
+      {
+        "text": "product-catalog"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Will this replace Instagram and WhatsApp on my phone?",
+        "answer": "No. SellThinker works alongside them. Messages you send from your phone show up in SellThinker too."
+      },
+      {
+        "question": "What about story replies and reactions?",
+        "answer": "If a story reply asks something or mentions a product, it's ranked and sorted like any other chat. If it's spam or a random reaction, it's tucked away and marked low priority."
+      },
+      {
+        "question": "Will a buyer who's waiting get missed?",
+        "answer": "No. There's a list of every chat where the buyer spoke last, oldest wait first, so nobody sits unanswered without you knowing."
+      },
+      {
+        "question": "Do I need the WhatsApp Business API?",
+        "answer": "You need a WhatsApp Business number connected through Meta's platform. We walk you through it, and where Meta's coexistence is available, the WhatsApp Business app on your phone keeps working. Our onboarding specialists will help you set up the full sync when you sign up."
+      }
+    ]
+  },
+  {
+    "slug": "conversation-stage-analysis",
+    "title": "Stop re-reading chats to figure out what needs you. The stage tells you.",
+    "eyebrow": "The backbone",
+    "lede": "Every other SellThinker feature (the priority list, lead scoring, recovery alerts, the Monday tally) runs on top of conversation stages. They are the substrate. Five live stages get assigned automatically and re-evaluated on every reply.",
+    "demoKey": "conversation_stage",
+    "demoTitle": "",
+    "pillarsLabel": "",
+    "pillars": [
+      {
+        "title": "Re-evaluated on every reply",
+        "text": "A cold chat that drops 'sending UPI' is Ready to Close the second it arrives. Most inbox tools assign a label once and forget."
+      },
+      {
+        "title": "Tells you why, lets you override",
+        "text": "Hover any stage to see the exact cues that triggered it. One-click override trains the model for your store specifically."
+      },
+      {
+        "title": "Stage transitions are events",
+        "text": "The priority list, lead scoring and recovery alerts all subscribe to the same event stream. One source of truth."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Detect",
+        "text": "Each new message runs through intent + lifecycle classifiers in well under a second."
+      },
+      {
+        "title": "Assign",
+        "text": "Conversation gets the highest-confidence stage. Confidence and triggering cues are visible on hover."
+      },
+      {
+        "title": "Override and learn",
+        "text": "Wrong call? Click to correct. Your overrides retrain the classifier against your store's voice."
+      }
+    ],
+    "howNote": "",
+    "outcomes": [
+      {
+        "text": "Decision confidence in the moment. You know what this chat needs without scrolling up."
+      },
+      {
+        "text": "You always know which chat needs you next."
+      },
+      {
+        "text": "No more 're-reading 30 threads at 9 PM'."
+      }
+    ],
+    "tieInsLabel": "What it powers",
+    "tieIns": [
+      {
+        "text": "daily-priority-list"
+      },
+      {
+        "text": "recovery-alerts"
+      },
+      {
+        "text": "lead-scoring"
+      }
+    ],
+    "faq": [
+      {
+        "question": "What if it gets a stage wrong?",
+        "answer": "Click to override. Your overrides train the model for your store specifically."
+      },
+      {
+        "question": "Does it work in Hinglish?",
+        "answer": "Yes. Most of our test data is Hinglish. It's the default voice of D2C IG chat."
+      },
+      {
+        "question": "Can I add custom stages?",
+        "answer": "Not in v1. We're keeping the framework tight so downstream features stay reliable."
+      }
+    ]
+  },
+  {
+    "slug": "daily-priority-list",
+    "title": "Open the chats that matter most first.",
+    "eyebrow": "Priority Today",
+    "lede": "Every morning, Priority Today puts the most important chats in front of you, so you know which WhatsApp or Instagram thread to reply to first. No scrolling, no guessing, no “87 unread” panic.",
+    "demoKey": "daily_priority",
+    "demoTitle": "",
+    "pillarsLabel": "What makes SellThinker different",
+    "pillars": [
+      {
+        "title": "Ready to pay comes first",
+        "text": "The order is simple. Buyers ready to pay come first (Close), then customers with a problem (Protect), then business messages, then buyers going quiet (Rescue), then everyone else waiting on a reply."
+      },
+      {
+        "title": "Niche-specific scoring",
+        "text": "SellThinker is the only DM management software that adapts to your niche and understands what matters most for your type of business. It's also the only one you can tailor to your own priorities, so the order fits how you sell."
+      },
+      {
+        "title": "Every chat says why it's there",
+        "text": "Data points like “confirmed size and asked to pay” or “second message about a refund” tell you why each chat made the list."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Your list is ready",
+        "text": "When you open SellThinker, today's list is already built from every chat with something waiting."
+      },
+      {
+        "title": "Work through it in order",
+        "text": "Open the first chat, reply or send the link, and move to the next."
+      },
+      {
+        "title": "It keeps up",
+        "text": "Chats you've answered drop off. A buyer who says they're ready to pay moves up."
+      }
+    ],
+    "howNote": "SellThinker runs a custom analysis every morning that scores and sorts your chats based on what's important to you.",
+    "outcomes": [
+      {
+        "text": "No more mornings spent deciding where to start."
+      },
+      {
+        "text": "Buyers ready to pay stop slipping past “I'll get to it later”."
+      },
+      {
+        "text": "Your day has a finish line."
+      },
+      {
+        "text": "A better understanding of your high-priority leads."
+      }
+    ],
+    "tieInsLabel": "",
+    "tieIns": [
+      {
+        "text": "lead-scoring"
+      },
+      {
+        "text": "conversation-stage-analysis"
+      },
+      {
+        "text": "recovery-alerts"
+      }
+    ],
+    "faq": [
+      {
+        "question": "How many chats are on the list?",
+        "answer": "Up to 25, so the list stays something you can actually finish. Everything else is still waiting in your inbox, sorted and scored, for when you have time."
+      },
+      {
+        "question": "What if I want to see everything?",
+        "answer": "Every chat is still in your inbox, sorted however you like. Priority Today is a shortlist of the chats that need you most today, not a limit on what you can see."
+      },
+      {
+        "question": "Why is a complaint above a warm lead?",
+        "answer": "A paying customer with an unanswered problem can cost you more than a new sale: a bad review, a refund, or a buyer who never comes back. So Protect sits near the top, and SellThinker always keeps it in the top two groups."
+      },
+      {
+        "question": "Can I hide a chat for now?",
+        "answer": "Yes. Snooze a buyer until a date, like the day a restock lands, or until they write to you again. They leave your list until then, and come back when you have a real reason to reply."
+      },
+      {
+        "question": "Can I adjust my Priority Today parameters?",
+        "answer": "Yes. SellThinker lets you tailor Priority Today to what you think matters most in your DMs. In Settings you can change the order the groups are worked in and adjust how hot and warm are set, and you can preview today's list before you save. The one fixed rule: a paying customer waiting on you stays in the top two."
+      }
+    ]
+  },
+  {
+    "slug": "lead-scoring",
+    "title": "Know this buyer, not just this chat.",
+    "eyebrow": "Core feature",
+    "lede": "A profile built from every conversation, every order, every signal. See who they are as a buyer. Their archetype, their history, and the patterns they repeat: how fast they close, when they shop, what they come back for.",
+    "demoKey": "lead_scoring",
+    "demoTitle": "",
+    "pillarsLabel": "",
+    "pillars": [
+      {
+        "title": "Person-level, not chat-level",
+        "text": "The score reflects the whole buyer (three orders, two closes, catalogue browsing), not just what they said this morning."
+      },
+      {
+        "title": "Explained, not magic",
+        "text": "Six weighted signals build every score. See exactly why Maya is 94 and what would move it."
+      },
+      {
+        "title": "Regulars get treated like regulars",
+        "text": "Returning buyers earn a pattern panel on the same profile. Close velocity, best time to message, average basket, preferred tone. Learned from history, never entered by hand."
+      },
+      {
+        "title": "Feeds everything downstream",
+        "text": "Score drives priority rank and recovery timing. The patterns shape what you send. One profile, used everywhere."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Build the profile",
+        "text": "Every conversation, order, and catalogue interaction is compiled into one persistent profile. Per person, not per chat."
+      },
+      {
+        "title": "Score and explain",
+        "text": "A 0–100 composite score with six visible signals. No black box, no 'AI says so'."
+      },
+      {
+        "title": "Act on it",
+        "text": "Persona, repeat patterns, and a drafted message surface on the profile. Ready to send, in her preferred tone."
+      }
+    ],
+    "howNote": "",
+    "outcomes": [
+      {
+        "text": "You know who a buyer is before you open the chat."
+      },
+      {
+        "text": "Hot leads surface with the context to close them, not just a number."
+      },
+      {
+        "text": "Loyal buyers feel remembered, because you reply like you remember."
+      },
+      {
+        "text": "Repeat-buyer LTV becomes a number you can watch."
+      }
+    ],
+    "tieInsLabel": "",
+    "tieIns": [
+      {
+        "text": "daily-priority-list"
+      },
+      {
+        "text": "recovery-alerts"
+      },
+      {
+        "text": "integrations"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Is this per-chat or per-person?",
+        "answer": "Per person. The score reflects their full history with your store, not just today's message."
+      },
+      {
+        "question": "What signals feed the score?",
+        "answer": "Buying language, product focus, purchase history and recency. Every chat starts cold, and every point can be explained."
+      },
+      {
+        "question": "Does score decay?",
+        "answer": "Yes. A hot lead with no recent activity drops over time, and triggers a recovery alert at the right moment."
+      },
+      {
+        "question": "What if a buyer uses two handles?",
+        "answer": "They stay as two buyers. SellThinker won't guess that an Instagram handle and a WhatsApp number are the same person, because a wrong match would mix up two strangers' chats."
+      },
+      {
+        "question": "Can a buyer ask for their data to go?",
+        "answer": "Yes. Buyer-requested deletion removes the profile and everything chat-derived within 24 hours. Built to DPDP and GDPR standards."
+      }
+    ]
+  },
+  {
+    "slug": "recovery-alerts",
+    "title": "Recover leads before they're cold.",
+    "eyebrow": "Lead recovery",
+    "lede": "A buyer asks the price, then stops replying. SellThinker spots the silence, shows the most likely reason, and drafts a follow-up that fits it while they're still deciding. You choose whether to send it.",
+    "demoKey": "recovery",
+    "demoTitle": "",
+    "pillarsLabel": "What makes SellThinker different",
+    "pillars": [
+      {
+        "title": "Custom recovery for each reason",
+        "text": "A price worry, a delivery question, not sure they can trust you, trouble paying. SellThinker analyses why each lead dropped off and gives you a next step built for that reason."
+      },
+      {
+        "title": "Timed to your shop",
+        "text": "It starts from the usual pace for your kind of shop. After 30 replies from 10 of your buyers, it switches to your own buyers' rhythm, and shows you which one it's using."
+      },
+      {
+        "title": "Knows when to stop",
+        "text": "Instagram and WhatsApp limit when and how a business can message a buyer. SellThinker knows those messaging windows and template limits, and won't suggest a direct reply once a window has closed. It also stops suggesting after two follow-ups."
+      },
+      {
+        "title": "Snooze for the right day",
+        "text": "Restock next week? Snooze the buyer until then, and they come back to your list when you have a real reason to write."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Spot",
+        "text": "Every hour, SellThinker checks for buyers who went quiet."
+      },
+      {
+        "title": "Explain",
+        "text": "Each one gets a likely reason, based on what they last said."
+      },
+      {
+        "title": "Suggest",
+        "text": "You get a drafted follow-up that fits the reason. Edit it, send it, or skip it."
+      }
+    ],
+    "howNote": "Lead recovery pulls chat data from your unified inbox to find the best opportunities that can still be turned into sales.",
+    "outcomes": [
+      {
+        "text": "Fewer buyers lost to a silence you didn't notice."
+      },
+      {
+        "text": "No more awkward “just checking in” messages."
+      },
+      {
+        "text": "Your buyers feel remembered, not chased."
+      },
+      {
+        "text": "See how many quiet buyers came back each week."
+      }
+    ],
+    "tieInsLabel": "Works with",
+    "tieIns": [
+      {
+        "text": "lead-scoring"
+      },
+      {
+        "text": "conversation-stage-analysis"
+      },
+      {
+        "text": "integrations"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Will I bother buyers with too many messages?",
+        "answer": "No. After two follow-ups, SellThinker stops suggesting more, unless the buyer writes again."
+      },
+      {
+        "question": "Can I write my own message?",
+        "answer": "Of course. The draft is a starting point. Change it, or write your own."
+      },
+      {
+        "question": "What if they've bought somewhere else?",
+        "answer": "If a buyer says they've bought elsewhere, the chat is marked lost and they're left alone."
+      },
+      {
+        "question": "Does anything send automatically?",
+        "answer": "No. Every follow-up stays a draft until you send it."
+      }
+    ]
+  },
+  {
+    "slug": "product-catalog",
+    "title": "Your products, plus the words buyers actually use.",
+    "eyebrow": "Product catalog",
+    "lede": "SellThinker syncs directly with your e-commerce catalog and picks up the phrases your customers use, like “the ivory one” or “that blush dress from the reel”, mapping each one to the actual product. When it isn't sure, it asks you.",
+    "demoKey": "product_catalog",
+    "demoTitle": "",
+    "pillarsLabel": "What makes the SellThinker catalog different",
+    "pillars": [
+      {
+        "title": "Learns your buyers' words",
+        "text": "When a buyer's phrase doesn't match a product, SellThinker saves it as a suggestion. Approve it once, and the next buyer who says it is matched."
+      },
+      {
+        "title": "Asks instead of guessing",
+        "text": "If two products could fit, it asks you. A wrong match means a wrong payment link, so it never guesses."
+      },
+      {
+        "title": "Full catalog sync",
+        "text": "SellThinker syncs directly with your product catalog, whether it's on Shopify, WooCommerce or a spreadsheet you upload as a CSV, pulling in stock, sizes, variants and more. So its recommendations are based on real product information."
+      },
+      {
+        "title": "Shows what buyers keep asking for",
+        "text": "See which phrases match nothing in your catalog and how many chats asked, so a gap becomes a buying decision."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Import",
+        "text": "Connect your preferred catalog or e-commerce system to sync your products directly with SellThinker."
+      },
+      {
+        "title": "Match",
+        "text": "Product mentions in chats are matched to your catalog as they arrive."
+      },
+      {
+        "title": "Confirm",
+        "text": "New phrases wait for your one-tap approval. Nothing is approved automatically."
+      },
+      {
+        "title": "Reuse",
+        "text": "Matched products show up in drafts and follow-ups, so you name the exact piece the buyer asked about."
+      }
+    ],
+    "howNote": "",
+    "outcomes": [
+      {
+        "text": "Find the right product in seconds, even at midnight."
+      },
+      {
+        "text": "Follow-ups name the exact piece a buyer asked about."
+      },
+      {
+        "text": "Fewer wrong payment links."
+      },
+      {
+        "text": "See demand for things you don't sell yet."
+      }
+    ],
+    "tieInsLabel": "",
+    "tieIns": [
+      {
+        "text": "unified-inbox"
+      },
+      {
+        "text": "recovery-alerts"
+      },
+      {
+        "text": "integrations"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Do I need to add products to SellThinker by hand?",
+        "answer": "No. SellThinker syncs automatically with the e-commerce system you already use, like Shopify or WooCommerce, so your products, prices and stock come in on their own. No online store? Upload a CSV file instead."
+      },
+      {
+        "question": "What about variants and colours?",
+        "answer": "Supported. A phrase can point to a product or to a specific variant, like “Blue / Large”."
+      },
+      {
+        "question": "Who approves new phrases?",
+        "answer": "You do, with one tap. Nothing is approved automatically."
+      },
+      {
+        "question": "Will it change my store?",
+        "answer": "Never. Store connections only read. Nothing goes back."
+      }
+    ]
+  },
+  {
+    "slug": "integrations",
+    "title": "Plugs into what you already run. Nothing moves.",
+    "eyebrow": "Universal integration",
+    "lede": "Instagram, WhatsApp, your bots, your store, your checkout, your sheet and your team. SellThinker sits in the middle and reads them together, so one conversation carries the whole picture. No migration, no new app for your team to learn.",
+    "demoKey": "integrations",
+    "demoTitle": "",
+    "pillarsLabel": "",
+    "pillars": [
+      {
+        "title": "Your channels, as they are",
+        "text": "WhatsApp runs in coexistence, so you keep replying from your phone. Instagram connects with the official Meta login. Automations and bots like ManyChat keep running; a small flow snippet hands hot leads to you. n8n, Make.com and Zapier are coming soon."
+      },
+      {
+        "title": "Your store stays the source of truth",
+        "text": "Shopify, WooCommerce, a CSV, or products added by hand. Price, stock and promos sync in. SellThinker never changes your store."
+      },
+      {
+        "title": "Your payment link, in the reply",
+        "text": "When a buyer asks how to pay, the draft carries your own UPI ID or payment link. The money goes straight to you; SellThinker never holds it."
+      },
+      {
+        "title": "Your sheet, your phone",
+        "text": "Export your chats as a CSV any time; live sheet sync is coming. Drafts wait for you wherever you reply. Nothing sends itself, ever."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Connect",
+        "text": "Log in to each tool once. Most stores are done in about two minutes."
+      },
+      {
+        "title": "Read together",
+        "text": "Every message is matched to its product, stock, promo and payment the moment it arrives."
+      },
+      {
+        "title": "Work as usual",
+        "text": "Reply from wherever you already reply. SellThinker ranks, drafts and keeps score in the background."
+      }
+    ],
+    "howNote": "",
+    "outcomes": [
+      {
+        "text": "One place to see every buyer, without switching tools."
+      },
+      {
+        "text": "Your team keeps its habits. Nothing to retrain."
+      },
+      {
+        "text": "Answers quote real stock and real prices, every time."
+      }
+    ],
+    "tieInsLabel": "What it feeds",
+    "tieIns": [
+      {
+        "text": "unified-inbox"
+      },
+      {
+        "text": "product-catalog"
+      },
+      {
+        "text": "pipeline-insights"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Do I have to move off WhatsApp on my phone?",
+        "answer": "No. Coexistence keeps your WhatsApp Business app working exactly as it does. SellThinker reads alongside."
+      },
+      {
+        "question": "Will it change anything in my store?",
+        "answer": "No. Store connections are read-only. Price, stock and promos come in; nothing goes back."
+      },
+      {
+        "question": "I use ManyChat. Does that break?",
+        "answer": "No. Your flows keep running. One HTTP step hands each conversation to SellThinker so hot leads reach you."
+      },
+      {
+        "question": "No Shopify?",
+        "answer": "A Google Sheet or a CSV works. So does adding products by hand from an Instagram post."
+      },
+      {
+        "question": "Salesforce / HubSpot?",
+        "answer": "On the roadmap. We're starting where founders actually are."
+      }
+    ]
+  },
+  {
+    "slug": "pipeline-insights",
+    "title": "See your whole pipeline. Learn what moves it.",
+    "eyebrow": "Pipeline insights",
+    "lede": "Every chat is a sale somewhere on its way. SellThinker shows where your money is right now, where it leaked this week, and the one change most likely to win it back. Diagnoses, not dashboards.",
+    "demoKey": "pipeline",
+    "demoTitle": "",
+    "pillarsLabel": "",
+    "pillars": [
+      {
+        "title": "Money first, in one glance",
+        "text": "What's in play, what's ready to pay, what's going quiet. Counted in money, not message volume."
+      },
+      {
+        "title": "Leaks, explained",
+        "text": "'Wednesday lost 4 warm chats to slow replies.' Every leak comes with the reason and the chats behind it."
+      },
+      {
+        "title": "What works, for your store",
+        "text": "Which hours, which openers and which promos actually bring buyers back. Learned from your own closes."
+      },
+      {
+        "title": "One thing to try next",
+        "text": "Each week ends on a single, specific change. Next week's numbers tell you if it worked."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Count",
+        "text": "Every conversation is tracked from first message to paid, quiet or lost."
+      },
+      {
+        "title": "Explain",
+        "text": "Leaks are grouped by cause: slow reply, missing price, stock, drifted."
+      },
+      {
+        "title": "Suggest",
+        "text": "The pattern with the most money behind it becomes next week's one thing to try."
+      }
+    ],
+    "howNote": "",
+    "outcomes": [
+      {
+        "text": "You know how the business moved this week, in one minute."
+      },
+      {
+        "text": "Fixes go where the money is, not where the noise is."
+      },
+      {
+        "text": "Decisions get tested against next week's numbers, not gut feel."
+      }
+    ],
+    "tieInsLabel": "Built from",
+    "tieIns": [
+      {
+        "text": "conversation-stage-analysis"
+      },
+      {
+        "text": "recovery-alerts"
+      },
+      {
+        "text": "integrations"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Is this a reporting dashboard?",
+        "answer": "No. It answers three questions: where's the money, where did it leak, what do I change. Charts only where they help."
+      },
+      {
+        "question": "How soon does it learn?",
+        "answer": "The first week gives you the pipeline. Patterns like best reply hours sharpen after two to three weeks of chats."
+      },
+      {
+        "question": "Can I get it as a weekly summary?",
+        "answer": "Yes. Monday morning, email and in-app, plus a row in your sheet if you connect one."
+      }
+    ]
+  }
+]

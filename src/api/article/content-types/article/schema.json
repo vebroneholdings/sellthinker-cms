@@ -5,29 +5,89 @@
     "singularName": "article",
     "pluralName": "articles",
     "displayName": "Article",
-    "description": "Create your blog content"
+    "description": "Every Resources piece: blog posts, news, guides and tools."
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text",
-      "maxLength": 80
+      "type": "string",
+      "required": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text",
+      "maxLength": 320,
+      "required": true
+    },
+    "hub": {
+      "type": "enumeration",
+      "enum": [
+        "blog",
+        "news",
+        "guides",
+        "tools"
+      ],
+      "default": "blog",
+      "required": true
+    },
+    "template": {
+      "type": "enumeration",
+      "enum": [
+        "explainer",
+        "opinion",
+        "news_post",
+        "product_update",
+        "guide",
+        "how_to",
+        "top_list",
+        "checklist",
+        "comparison",
+        "case_study",
+        "tool",
+        "glossary",
+        "faq_page",
+        "data_report",
+        "message_templates",
+        "myth_vs_fact",
+        "roundup",
+        "interview"
+      ],
+      "default": "explainer",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "displayDate": {
+      "type": "date"
+    },
+    "readingMinutes": {
+      "type": "integer",
+      "min": 1
+    },
+    "reviewStatus": {
+      "type": "enumeration",
+      "enum": [
+        "placeholder",
+        "needs_fact_check",
+        "approved"
+      ],
+      "default": "placeholder"
     },
     "cover": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "author": {
       "type": "relation",
@@ -41,9 +101,52 @@
       "target": "api::category.category",
       "inversedBy": "articles"
     },
-    "blocks": {
+    "body": {
       "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+      "components": [
+        "blocks.rich-text",
+        "blocks.tldr",
+        "blocks.key-takeaways",
+        "blocks.callout",
+        "blocks.conclusion",
+        "blocks.spec-table",
+        "blocks.grid-table",
+        "blocks.checklist",
+        "blocks.steps",
+        "blocks.ranked-list",
+        "blocks.pros-cons",
+        "blocks.stats",
+        "blocks.quote",
+        "blocks.faq",
+        "blocks.chat-example",
+        "blocks.message-template",
+        "blocks.before-after",
+        "blocks.explainer",
+        "blocks.definition",
+        "blocks.timeline",
+        "blocks.image",
+        "blocks.video",
+        "blocks.html-embed",
+        "blocks.cta",
+        "blocks.related-links",
+        "blocks.sources"
+      ]
+    },
+    "news": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.news"
+    },
+    "guide": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.guide"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
-  }
+  },
+  "pluginOptions": {}
 }

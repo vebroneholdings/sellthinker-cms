@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_html_embeds",
+  "info": {
+    "displayName": "HTML tool embed",
+    "icon": "code",
+    "description": "A self-contained HTML/JS tool (calculator, checker). Runs sandboxed: no access to the page, cookies or forms around it."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "html": {
+      "type": "text",
+      "required": true
+    },
+    "height": {
+      "type": "integer",
+      "default": 480,
+      "min": 120,
+      "max": 2000
+    },
+    "note": {
+      "type": "text"
+    }
+  }
+}

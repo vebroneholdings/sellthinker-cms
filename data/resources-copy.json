@@ -1,0 +1,403 @@
+{
+  "source": "..\\sellThinker-website\\public\\design-to-copy-adjustments\\js\\resources-data.js",
+  "posts": [
+    {
+      "slug": "day-3-cliff",
+      "title": "Customer asked the price and stopped replying? Here's why, and what to send",
+      "excerpt": "Buyers rarely say no. They go quiet for a reason: the price, delivery, trust, fit or paying. How to tell which one it is, and the one move that fits each.",
+      "featured": true,
+      "type": "opinion",
+      "topic": "recovery",
+      "date": "2026-09-30",
+      "min": 7
+    },
+    {
+      "slug": "manychat-vs-human",
+      "title": "Bot first or human first? When a chatbot helps, and when you should reply",
+      "excerpt": "Bots answer fast. People close. Where each one belongs in an Instagram sales chat, and the moment to step in yourself.",
+      "featured": false,
+      "type": "comparison",
+      "topic": "instagram",
+      "date": "2026-09-24",
+      "min": 9
+    },
+    {
+      "slug": "seven-replies",
+      "title": "What to reply when a customer asks the price on WhatsApp",
+      "excerpt": "“How much?” is a buying signal. Say the price plainly, add the one thing that makes it worth it, and move the chat a step closer to paying. Includes replies for “rate batao” and “last price?”.",
+      "featured": false,
+      "type": "list",
+      "topic": "closing",
+      "date": "2026-09-18",
+      "min": 5
+    },
+    {
+      "slug": "coexistence",
+      "title": "WhatsApp coexistence: keep the Business app on your phone and use a sales tool too",
+      "excerpt": "Coexistence lets the WhatsApp Business app and a tool share one number. What changes, what doesn't, and Meta's limits to know about.",
+      "featured": false,
+      "type": "howto",
+      "topic": "whatsapp",
+      "date": "2026-09-11",
+      "min": 6
+    },
+    {
+      "slug": "unanswered-question",
+      "title": "The most expensive message in your inbox is the one you didn't answer",
+      "excerpt": "A missed sizing question costs more than a slow one. Why ‘answer first, sell second’ beats a discount.",
+      "featured": false,
+      "type": "opinion",
+      "topic": "closing",
+      "date": "2026-09-04",
+      "min": 4
+    },
+    {
+      "slug": "sheets-vs-crm",
+      "title": "Google Sheet or CRM? What a small chat store actually needs",
+      "excerpt": "Most CRMs are built for sales departments with pipelines and quotas. Most chat stores have a sheet and a founder. When to stay, when to move.",
+      "featured": false,
+      "type": "comparison",
+      "topic": "ops",
+      "date": "2026-08-28",
+      "min": 8
+    },
+    {
+      "slug": "buyer-words",
+      "title": "Your buyers don't use your product names. Here's how to catch up",
+      "excerpt": "“The blue one from your story” is a product. Building a list of the phrases buyers use cuts the back-and-forth in half.",
+      "featured": false,
+      "type": "howto",
+      "topic": "catalog",
+      "date": "2026-08-21",
+      "min": 6
+    },
+    {
+      "slug": "follow-up-message",
+      "title": "Follow-up message to a customer who stopped replying",
+      "excerpt": "One follow-up for each reason a buyer goes quiet. No apologies, no fake urgency, and no automatic discount.",
+      "featured": false,
+      "type": "howto",
+      "topic": "recovery",
+      "date": "2026-08-14",
+      "min": 7
+    },
+    {
+      "slug": "dm-mistakes",
+      "title": "Five DM habits quietly costing you sales",
+      "excerpt": "Voice notes, ‘DM for price’, and replying at midnight. The small habits buyers notice before you do.",
+      "featured": false,
+      "type": "list",
+      "topic": "instagram",
+      "date": "2026-08-07",
+      "min": 5
+    },
+    {
+      "slug": "payment-links",
+      "title": "Send the payment link before they ask for it",
+      "excerpt": "The moment a buyer confirms a size is the moment to close. How to spot it, and what to send so the link lands right.",
+      "featured": false,
+      "type": "howto",
+      "topic": "closing",
+      "date": "2026-07-31",
+      "min": 5
+    },
+    {
+      "slug": "promo-or-scarcity",
+      "title": "Discount or scarcity: which brings a quiet buyer back?",
+      "excerpt": "“10% off” or “only 3 left in your size”? When each one brings a quiet buyer back, and when it just teaches buyers to wait.",
+      "featured": false,
+      "type": "comparison",
+      "topic": "recovery",
+      "date": "2026-07-24",
+      "min": 6
+    },
+    {
+      "slug": "reply-hours",
+      "title": "Six numbers every chat seller should check on Monday",
+      "excerpt": "Chats in, replies, first-reply time and where buyers went quiet. Six numbers, one minute, and you know where the week went.",
+      "featured": false,
+      "type": "list",
+      "topic": "ops",
+      "date": "2026-07-17",
+      "min": 4
+    },
+    {
+      "slug": "whatsapp-window",
+      "title": "The 24-hour window: what you can still send after a buyer goes quiet",
+      "excerpt": "WhatsApp and Instagram both close the door after a while. What the rules are, and how to stay inside them without sounding like a bot.",
+      "featured": false,
+      "type": "howto",
+      "topic": "whatsapp",
+      "date": "2026-07-10",
+      "min": 5
+    },
+    {
+      "slug": "automation-myth",
+      "title": "Automate the sorting, not the selling",
+      "excerpt": "Every tool promises to reply for you. We think the reply is the part worth keeping. Here's what we automate instead.",
+      "featured": false,
+      "type": "opinion",
+      "topic": "ops",
+      "date": "2026-07-03",
+      "min": 6
+    }
+  ],
+  "news": [
+    {
+      "slug": "2026-10-06-integrations",
+      "stream": "sellthinker",
+      "date": "2026-10-06",
+      "kind": "launch",
+      "area": "integrations",
+      "version": "",
+      "title": "Integrations",
+      "excerpt": "Instagram, WhatsApp, your store and your payment link now feed one place. Every chat arrives with its product, stock and payment details attached, so you answer without switching tabs.",
+      "source": "",
+      "take": "",
+      "featureLink": "integrations.html"
+    },
+    {
+      "slug": "2026-10-02-whatsapp-opens-coexistence-to-more-markets",
+      "stream": "industry",
+      "date": "2026-10-02",
+      "kind": "platform",
+      "area": "whatsapp",
+      "version": "",
+      "title": "WhatsApp opens coexistence to more markets",
+      "excerpt": "More businesses can now run the WhatsApp Business app and the Cloud API on the same number. Sellers keep replying from their phone while tools read and route the same chats. It removes the old choice between replying from your phone and using a tool.",
+      "source": "WhatsApp Business",
+      "take": "This is the setup we built around. If you held off on tools to keep your phone, you no longer have to.",
+      "featureLink": ""
+    },
+    {
+      "slug": "2026-09-29-recovery-rebuilt-as-one-list",
+      "stream": "sellthinker",
+      "date": "2026-09-29",
+      "kind": "improvement",
+      "area": "recovery",
+      "version": "",
+      "title": "Recovery, rebuilt as one list",
+      "excerpt": "Quiet buyers now sit in one list, banded Act now, Still warm and Fading, and sorted by who's worth chasing. Open any row for the full lead file: their last words, why they stalled, how long you have, and the reply to send.",
+      "source": "",
+      "take": "",
+      "featureLink": "recovery-alerts.html"
+    },
+    {
+      "slug": "2026-09-26-instagram-tightens-the-7-day-messaging-window-for-businesses",
+      "stream": "industry",
+      "date": "2026-09-26",
+      "kind": "policy",
+      "area": "instagram",
+      "version": "",
+      "title": "Instagram tightens the 7-day messaging window for businesses",
+      "excerpt": "Business accounts can reply freely for seven days after a buyer's last message. After that, only narrow tagged replies are allowed, and automated follow-ups get stricter review. Quiet buyers past a week now need a comment or story reply to reopen the chat.",
+      "source": "Instagram",
+      "take": "Day 3 to day 6 is now the real recovery window on Instagram. Chase inside it.",
+      "featureLink": "recovery-alerts.html"
+    },
+    {
+      "slug": "2026-09-22-insights",
+      "stream": "sellthinker",
+      "date": "2026-09-22",
+      "kind": "launch",
+      "area": "insights",
+      "version": "",
+      "title": "Insights",
+      "excerpt": "See where buying chats stopped this week and why: slow replies, no payment link, links left unpaid, silence after the price. Every count opens the chats behind it.",
+      "source": "",
+      "take": "",
+      "featureLink": "pipeline-insights.html"
+    },
+    {
+      "slug": "2026-09-17-chat-is-now-the-first-touchpoint-for-most-small-d2c-orders",
+      "stream": "industry",
+      "date": "2026-09-17",
+      "kind": "market",
+      "area": "commerce",
+      "version": "",
+      "title": "Chat is now the first touchpoint for most small D2C orders",
+      "excerpt": "Surveys of small direct-to-consumer brands keep finding the same thing: a growing share of first orders start in a DM, not on the product page. Price, size and delivery questions dominate, and most go unanswered for hours.",
+      "source": "Industry report",
+      "take": "The store page is where they pay. The chat is where they decide.",
+      "featureLink": ""
+    },
+    {
+      "slug": "2026-09-15-specs-proposed-from-chats",
+      "stream": "sellthinker",
+      "date": "2026-09-15",
+      "kind": "improvement",
+      "area": "catalog",
+      "version": "",
+      "title": "Specs proposed from chats",
+      "excerpt": "When several buyers ask the same question about a product, the answer arrives as a spec to accept. One tap fills it in and your drafts start quoting it. Nothing in your store changes without you.",
+      "source": "",
+      "take": "",
+      "featureLink": "product-catalog.html"
+    },
+    {
+      "slug": "2026-09-08-faster-ranking-on-busy-mornings",
+      "stream": "sellthinker",
+      "date": "2026-09-08",
+      "kind": "fix",
+      "area": "priority",
+      "version": "",
+      "title": "Faster ranking on busy mornings",
+      "excerpt": "Priority Today now builds in under a minute for stores with more than 500 open chats. Your lineup is ready before you open the app, even after a launch weekend.",
+      "source": "",
+      "take": "",
+      "featureLink": ""
+    },
+    {
+      "slug": "2026-09-03-pay-in-chat-links-become-the-default-checkout-for-social-sellers",
+      "stream": "industry",
+      "date": "2026-09-03",
+      "kind": "platform",
+      "area": "payments",
+      "version": "",
+      "title": "Pay-in-chat links become the default checkout for social sellers",
+      "excerpt": "Payment providers are shipping lighter links built for DMs: one tap, saved details, and status that reports back to the seller. Abandonment drops when the link arrives right after the buyer says yes, not an hour later.",
+      "source": "Payments",
+      "take": "Send the link the moment they confirm a size. Speed beats a discount here.",
+      "featureLink": ""
+    },
+    {
+      "slug": "2026-08-25-early-access-opens-in-waves",
+      "stream": "sellthinker",
+      "date": "2026-08-25",
+      "kind": "company",
+      "area": "company",
+      "version": "",
+      "title": "Early access opens in waves",
+      "excerpt": "We're adding sellers in waves so every store gets a hands-on setup call. The waitlist stays open, and the free audit is still the fastest way in.",
+      "source": "",
+      "take": "",
+      "featureLink": ""
+    },
+    {
+      "slug": "2026-08-20-per-message-pricing-replaces-conversation-pricing",
+      "stream": "industry",
+      "date": "2026-08-20",
+      "kind": "policy",
+      "area": "whatsapp",
+      "version": "",
+      "title": "Per-message pricing replaces conversation pricing",
+      "excerpt": "Template messages are now billed per message instead of per 24-hour conversation, and replies inside the service window stay free. Businesses that answer fast pay less; mass follow-ups cost more.",
+      "source": "WhatsApp Business",
+      "take": "Good news for sellers who reply fast. Answer inside the window.",
+      "featureLink": ""
+    },
+    {
+      "slug": "2026-08-11-snooze-for-the-right-day",
+      "stream": "sellthinker",
+      "date": "2026-08-11",
+      "kind": "improvement",
+      "area": "recovery",
+      "version": "",
+      "title": "Snooze for the right day",
+      "excerpt": "Snooze a quiet buyer until the day a promo starts or a restock lands. They come back to your list on that day, not before, so you nudge with a real reason to reply.",
+      "source": "",
+      "take": "",
+      "featureLink": "recovery-alerts.html"
+    },
+    {
+      "slug": "2026-08-04-bots-answer-first-humans-still-close",
+      "stream": "industry",
+      "date": "2026-08-04",
+      "kind": "market",
+      "area": "commerce",
+      "version": "",
+      "title": "Bots answer first, humans still close",
+      "excerpt": "Brands using chatbots report faster first replies but flat conversion on high-intent chats. The pattern across stores: bots handle FAQs well, and buyers ready to pay still wait for a person.",
+      "source": "Industry report",
+      "take": "Let the bot sort. Keep the close human.",
+      "featureLink": "integrations.html"
+    },
+    {
+      "slug": "2026-07-28-story-replies-stop-counting-as-leads",
+      "stream": "sellthinker",
+      "date": "2026-07-28",
+      "kind": "fix",
+      "area": "inbox",
+      "version": "",
+      "title": "Story replies stop counting as leads",
+      "excerpt": "Emoji-only story reactions are now tucked out of the way instead of filling your inbox, so the buyers asking about products stay in front and your counts stop inflating on post days.",
+      "source": "",
+      "take": "",
+      "featureLink": ""
+    }
+  ],
+  "guides": [
+    {
+      "slug": "connect",
+      "stage": "setup",
+      "min": 5,
+      "steps": 4,
+      "title": "Connect Instagram and WhatsApp",
+      "excerpt": "Official Meta login for Instagram, coexistence for WhatsApp. Your phone keeps working."
+    },
+    {
+      "slug": "store",
+      "stage": "setup",
+      "min": 4,
+      "steps": 3,
+      "title": "Bring in your catalog",
+      "excerpt": "Shopify, WooCommerce, a CSV file, or add products by hand. Prices and stock come in."
+    },
+    {
+      "slug": "team",
+      "stage": "setup",
+      "min": 3,
+      "steps": 3,
+      "title": "Invite the people who help you",
+      "excerpt": "Owner, admin and member roles, and who sees what."
+    },
+    {
+      "slug": "first-run",
+      "stage": "day",
+      "min": 6,
+      "steps": 5,
+      "title": "Work your first priority run",
+      "excerpt": "Up to 25 stops, one pass. How to use the why-line, drafts and skips."
+    },
+    {
+      "slug": "recovery",
+      "stage": "day",
+      "min": 7,
+      "steps": 5,
+      "title": "Run a recovery pass in ten minutes",
+      "excerpt": "Who to chase, who to snooze, who to let go. And what to say."
+    },
+    {
+      "slug": "drafts",
+      "stage": "day",
+      "min": 4,
+      "steps": 4,
+      "title": "Make drafts sound like you",
+      "excerpt": "Tone, sign-offs and the phrases you never use."
+    },
+    {
+      "slug": "phrases",
+      "stage": "grow",
+      "min": 5,
+      "steps": 4,
+      "title": "Teach the catalog your buyers' words",
+      "excerpt": "Confirm phrases, accept specs, and push answerable past 90%."
+    },
+    {
+      "slug": "promos",
+      "stage": "grow",
+      "min": 6,
+      "steps": 4,
+      "title": "Use promos without training buyers to wait",
+      "excerpt": "When a code helps, when scarcity works better, and how to scope it."
+    },
+    {
+      "slug": "monday",
+      "stage": "grow",
+      "min": 5,
+      "steps": 3,
+      "title": "Read your Monday numbers",
+      "excerpt": "Six numbers, one leak, one thing to try. Then check it worked."
+    }
+  ]
+}

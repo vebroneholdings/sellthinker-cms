@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_timeline_events",
+  "info": {
+    "displayName": "Timeline event",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "when": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text"
+    }
+  }
+}
