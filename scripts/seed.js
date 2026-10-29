@@ -37,9 +37,20 @@ async function seed() {
 
   let created = 0;
   const drafts = [];
+  const failed = [];
   for (const { topic, author, publish = true, ...article } of articles) {
     const data = { ...article, category: topicIds[topic] || null, author: authorIds[author] || null };
-    const result = await upsert('article', { slug: article.slug }, data, { publish });
+    let result;
+    try {
+      result = await upsert('article', { slug: article.slug }, data, { publish });
+    } catch (error) {
+      // Report which entry and which fields, then carry on with the rest.
+      const details = (error.details && error.details.errors) || [];
+      failed.push(article.slug);
+      console.error(`✗ ${article.slug}: ${error.message}`);
+      for (const e of details) console.error(`    ${(e.path || []).join('.')}: ${e.message}`);
+      continue;
+    }
     if (result.created) created += 1;
     // Kept as a draft: take down any version published by an earlier seed.
     if (!publish) {
@@ -48,6 +59,7 @@ async function seed() {
     }
   }
   console.log(`articles: ${articles.length} (${created} new; unpublished: ${drafts.join(', ') || 'none'})`);
+  if (failed.length) console.log(`articles that failed (fix and re-run): ${failed.join(', ')}`);
 
   let removed = 0;
   for (const slug of retired) {

@@ -136,7 +136,7 @@ const showcase = [
       { __component: 'blocks.definition', term: 'Recovery window', short: 'How long you still have to follow up before a quiet buyer usually goes cold.' },
       { __component: 'blocks.definition', term: 'Payment sent', short: 'The stage after you’ve sent a buyer your payment link and before they’ve paid.' },
       { __component: 'blocks.definition', term: 'Noise shelf', short: 'Where spam and emoji-only reactions are folded away. Nothing is deleted; one tap moves a chat back.' },
-      { __component: 'blocks.related-links', links: [{ label: 'Hot, warm and cold leads explained', url: 'article.html?slug=hot-warm-cold-leads-whatsapp-instagram' }, { label: 'Daily priority list', url: 'daily-priority-list.html' }] },
+      { __component: 'blocks.related-links', links: [{ label: 'Hot, warm and cold leads explained', url: '/resources/hot-warm-cold-leads-whatsapp-instagram' }, { label: 'Daily priority list', url: '/daily-priority-list' }] },
     ],
   }),
   A({
@@ -219,7 +219,7 @@ const showcase = [
           { when: 'October', title: 'Drafts in English, Hindi and Hinglish', body: 'With tone options: shorter, friendlier, more formal.' },
         ],
       },
-      { __component: 'blocks.related-links', links: [{ label: 'Daily priority list', url: 'daily-priority-list.html' }, { label: 'Lead recovery', url: 'recovery-alerts.html' }] },
+      { __component: 'blocks.related-links', links: [{ label: 'Daily priority list', url: '/daily-priority-list' }, { label: 'Lead recovery', url: '/recovery-alerts' }] },
     ],
   }),
   A({
