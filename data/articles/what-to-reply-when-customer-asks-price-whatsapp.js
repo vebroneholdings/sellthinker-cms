@@ -10,7 +10,7 @@ module.exports = A({
   topic: 'closing',
   displayDate: '2026-10-29',
   readingMinutes: 7,
-  reviewStatus: 'needs_fact_check',
+  reviewStatus: 'approved',
   title: 'What to reply when a customer asks the price on WhatsApp',
   excerpt: 'State the price plainly, pair it with the one thing that makes it worth it, and end with one easy question. Copy-ready replies in English, Hinglish and Hindi, including what to say to “rate batao” and “last price?”.',
   seo: {
@@ -37,7 +37,7 @@ module.exports = A({
 
     block('blocks.before-after', {
       title: 'One rewrite',
-      before: 'Price 1499/- only + shipping. Pls let me know.',
+      before: 'Price $59 only + shipping. Pls let me know.',
       after: 'Hi! The rose kurta set is $59 with free shipping. It’s pure cotton with a lined top, so it isn’t see-through. Which size, M or L?',
       why: 'The second reply answers the questions the buyer hadn’t asked yet (shipping, fabric) and ends with a choice they can make in one word.',
     }),
@@ -122,7 +122,7 @@ module.exports = A({
       title: 'Keep reading',
       links: [
         { label: 'Customer asked the price and stopped replying', url: '/resources/customer-asked-price-and-stopped-replying' },
-        { label: 'Follow-up message to a customer who stopped replying', url: '/resources/follow-up-message' },
+        { label: 'Recovery alerts: why a buyer went quiet, and what to send', url: '/recovery-alerts' },
       ],
     }),
 

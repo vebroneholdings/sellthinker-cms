@@ -8,7 +8,7 @@ module.exports = A({
   topic: 'closing',
   displayDate: '2026-10-29',
   readingMinutes: 7,
-  reviewStatus: 'needs_fact_check',
+  reviewStatus: 'approved',
   title: 'When (and how) to send a payment link on WhatsApp',
   excerpt: 'Send a payment link on WhatsApp only when the chat is ready to close, the size or colour is confirmed, and the buyer hasn’t asked for COD. How to send it, what to write with it, and what to do when it sits unpaid.',
   seo: {
@@ -65,8 +65,8 @@ module.exports = A({
       p('You don’t need a website or a shop app. You need one of these, in your own name:'),
       ul([
         '**A UPI ID.** The simplest option for buyers in India: share it as text and they pay from any UPI app.',
-        '**A Razorpay Payment Link.** Created from your Razorpay Dashboard for a set amount. Razorpay lets you set an expiry date and send automated SMS reminders, and shows each link as issued, partially paid, paid, expired or cancelled. Its UPI Payment Links work only on Android and don’t take part payments.',
-        '**A Stripe payment link.** Copied from the Payment Links page in your Stripe Dashboard. One link can be reused with many buyers, so for a one-off chat order, write the product and amount in your message. You can deactivate a link when you stop selling the item.',
+        '**A Razorpay Payment Link.** Created from your Razorpay Dashboard for a set amount. Razorpay lets you set an expiry date and send automatic SMS or email reminders (if you add the buyer’s phone or email), and shows each link as created, partially paid, paid, expired or cancelled. Its UPI Payment Links work only on Android and don’t take part payments.',
+        '**A Stripe payment link.** Copied from the Payment Links page in your Stripe Dashboard. One link can be reused with many buyers, so for a one-off chat order, write the product and amount in your message. You can deactivate a link when you stop selling the item. Stripe accepts new businesses in India by invite only, so most India-based sellers use Razorpay or a UPI ID.',
       ]),
       p('Whichever you use, it’s your account and your money. Check your provider’s own docs (listed below) for fees and settings.'),
     ),
@@ -126,8 +126,8 @@ module.exports = A({
     block('blocks.related-links', {
       links: [
         { label: 'Why am I losing sales in my Instagram DMs (and WhatsApp chats)', url: '/resources/losing-sales-in-instagram-dms' },
-        { label: 'Follow-up message to a customer who stopped replying', url: '/resources/follow-up-message' },
         { label: 'Customer asked the price and stopped replying', url: '/resources/customer-asked-price-and-stopped-replying' },
+        { label: 'Recovery alerts: why a buyer went quiet, and what to send', url: '/recovery-alerts' },
       ],
     }),
 

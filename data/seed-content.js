@@ -290,8 +290,10 @@ const fromFiles = fs.existsSync(articleDir)
   ? fs.readdirSync(articleDir).filter((f) => f.endsWith('.js')).sort().map((f) => require(path.join(articleDir, f)))
   : [];
 
-/* Showcase entries that are only placeholders stay as drafts: they exist to demo blocks. */
-for (const a of showcase) if (a.reviewStatus === 'placeholder') a.publish = false;
+/* Launch content is the SEO articles in data/articles only (decided 2026-10-29).
+   The showcase entries (one per template, to demo blocks) and the guides stay as
+   drafts until each one is reviewed; set `publish: true` on an entry to release it. */
+for (const a of [...showcase, ...guides]) if (a.publish !== true) a.publish = false;
 
 /* Guide titles and summaries come from the reviewed copy (npm run import:resources). */
 const COPY = require('./resources-copy.json');

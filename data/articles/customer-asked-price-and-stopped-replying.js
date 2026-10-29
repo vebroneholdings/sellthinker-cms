@@ -8,7 +8,7 @@ module.exports = A({
   topic: 'recovery',
   displayDate: '2026-10-29',
   readingMinutes: 7,
-  reviewStatus: 'needs_fact_check',
+  reviewStatus: 'approved',
   title: 'Customer asked the price and stopped replying: nine reasons and the one move for each',
   excerpt: 'A buyer who goes quiet after the price usually hasn’t said no. They stalled on one thing: fit, delivery, trust, how to pay. Here are the nine reasons buyers go quiet on WhatsApp and Instagram, and the one message to send for each.',
   seo: {
@@ -19,7 +19,7 @@ module.exports = A({
     tldr('When a customer asks the price and stops replying, the price is rarely the whole story. Usually one thing is still open: size, delivery, trust or how to pay. Find which one, answer it in one message, and stop there. No apology, no invented urgency, no discount by default.'),
 
     text(
-      p('Your customer asked the price and stopped replying, and now the chat just sits there: their “rate batao?”, your “$49”, two blue ticks, then nothing.'),
+      p('Your customer asked the price and stopped replying, and now the chat just sits there: their “rate batao?”, your “$45”, two blue ticks, then nothing.'),
       p('If you’re a solo seller handling 50–500 chats a day on Instagram and WhatsApp, you’ll have dozens of these by evening, and no time to guess which ones deserve a second message.'),
       p('Most of these buyers didn’t say no. They stopped at a specific question, and the price was just the last thing on screen. Here are the nine reasons buyers go quiet and the one best move for each.'),
 
@@ -58,8 +58,8 @@ module.exports = A({
 
     text(
       h2('Price talk: quiet after the number'),
-      p('A bare “$49” gives the buyer nothing to weigh it against, and nothing to reply to. Don’t drop the price or apologise for it. Send it again with the one thing that makes it worth it.'),
-      p('**Send:** “Hi! The mulmul kurta is $49 with free shipping. It’s pure cotton, so it stays soft wash after wash. Shall I keep an M for you?” If they’d asked “last price?”, see [what to reply when a customer asks the price on WhatsApp](/resources/what-to-reply-when-customer-asks-price-whatsapp).'),
+      p('A bare “$45” gives the buyer nothing to weigh it against, and nothing to reply to. Don’t drop the price or apologise for it. Send it again with the one thing that makes it worth it.'),
+      p('**Send:** “Hi! The mulmul kurta is $45 with free shipping. It’s pure cotton, so it stays soft wash after wash. Shall I keep an M for you?” If they’d asked “last price?”, see [what to reply when a customer asks the price on WhatsApp](/resources/what-to-reply-when-customer-asks-price-whatsapp).'),
 
       h2('Missed question: they asked, nobody answered'),
       p('Somewhere above sits “blue mein hai?” with no reply under it. A follow-up that skips it tells the buyer you didn’t read their messages.'),
@@ -91,18 +91,18 @@ module.exports = A({
 
       h2('How to pay: they wanted to pay and couldn’t see how'),
       p('The warmest quiet buyer there is. They asked “GPay chalega?” and the answer came late, or without the UPI ID.'),
-      p('**Send:** your UPI ID or payment link and the total, in one message: “Total is $54 with shipping. UPI: [your UPI ID], or pay here: [your link]. Send a screenshot once done and I’ll pack it today.”'),
+      p('**Send:** your UPI ID or payment link and the total, in one message: “Total is $50 with shipping. UPI: [your UPI ID], or pay here: [your link]. Send a screenshot once done and I’ll pack it today.”'),
 
       h2('No response from customer: when to stop'),
       p('One follow-up per reason. If the buyer doesn’t answer a message that dealt with what stalled them, let it rest. A second nudge a few days later is fair for Date passed or Link unpaid; after that, mark the chat lost. Three “hello??” messages cost more than the sale: they cost the buyer’s next visit.'),
-      p('Leave out invented urgency (“only 1 left!” when you have twenty) and a discount nobody asked for. Both teach buyers that going quiet pays. Copy-ready messages for all nine reasons are in [follow-up message to a customer who stopped replying](/resources/follow-up-message).'),
+      p('Leave out invented urgency (“only 1 left!” when you have twenty) and a discount nobody asked for. Both teach buyers that going quiet pays. SellThinker’s [Recovery alerts](/recovery-alerts) draft a follow-up that fits the reason, for you to check and send.'),
     ),
 
     callout('insight', 'How SellThinker finds these for you', 'SellThinker’s Recovery view scans your Instagram DMs and WhatsApp Business chats for quiet buyers, labels each with one of these nine reasons and shows the best move. It drafts the follow-up in English, Hindi or Hinglish; you send it. It is not a chatbot and never sends anything on its own.'),
 
     faq([
       ['Is no response a rejection?', 'Usually not. A clear “no thanks” is a rejection; silence after a price is a pause. Most often something is still unanswered (fit, delivery, trust, how to pay) or the buyer simply got busy. Send one follow-up that answers the likely reason, and only mark the chat lost if that gets no reply.'],
-      ['How long is too long without replying?', 'Reply to a buying question as fast as you can: a buyer who asked three shops often goes with whoever answered first. Follow up a quiet buyer the next day for Price talk or Drifted, on the day itself for Date passed. If you reply through a WhatsApp Business Platform tool rather than the app on your phone, Meta allows free-form messages only within 24 hours of the buyer’s last message; after that, only pre-approved templates.'],
+      ['How long is too long without replying?', 'Reply to a buying question as fast as you can: a buyer who asked three shops may well go with whoever answered first. Follow up a quiet buyer the next day for Price talk or Drifted, on the day itself for Date passed. If you reply through a WhatsApp Business Platform tool rather than the app on your phone, Meta allows free-form messages only within 24 hours of the buyer’s last message; after that, only pre-approved templates.'],
       ['How to reactivate old leads?', 'Give them a real reason, not “just checking”: their piece is back in stock, a new colour came in their size. One message about their product, ending in one question, written to that buyer alone.'],
       ['Why do customers go quiet after asking the price?', 'Because other questions arrive with the price: will it fit, when will it reach, is it genuine, how do I pay. If your reply answers only the price, the open question stalls the chat.'],
       ['Is there a tool that flags buyers who stopped replying?', 'SellThinker does this for Instagram DMs and WhatsApp Business chats. It detects when a buyer stops responding, puts the chat in Recovery with the reason and the best move, and drafts the follow-up for you to send. SellThinker Signals is $49 a month, and the Sales Chat Audit is free.'],
@@ -111,9 +111,9 @@ module.exports = A({
     block('blocks.related-links', {
       title: 'Keep reading',
       links: [
-        { label: 'Follow-up message to a customer who stopped replying', url: '/resources/follow-up-message' },
+        { label: 'Recovery alerts: why a buyer went quiet, and what to send', url: '/recovery-alerts' },
         { label: 'What to reply when a customer asks the price on WhatsApp', url: '/resources/what-to-reply-when-customer-asks-price-whatsapp' },
-        { label: 'Hot, warm and cold leads for WhatsApp and Instagram sellers', url: '/resources/hot-warm-cold-leads-whatsapp-instagram' },
+        { label: 'Lead scoring: hot, warm and cold buyers', url: '/lead-scoring' },
       ],
     }),
 

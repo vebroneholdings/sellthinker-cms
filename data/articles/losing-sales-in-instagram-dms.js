@@ -8,7 +8,7 @@ module.exports = A({
   topic: 'instagram',
   displayDate: '2026-10-29',
   readingMinutes: 7,
-  reviewStatus: 'needs_fact_check',
+  reviewStatus: 'approved',
   title: 'Why am I losing sales in my Instagram DMs (and WhatsApp chats)',
   excerpt: 'Chat sales rarely vanish in one place. They leak at five points: a slow reply, no link sent, a link left unpaid, silence after the price, and a quiet buyer nobody followed up. How to spot and count each one.',
   seo: {
@@ -78,7 +78,7 @@ module.exports = A({
         '**Price talk**, **Missed question**, **Date passed**, **Drifted**',
         '**Link unpaid**, **Delivery worry**, **Trust doubt**, **Fit doubt**, **How to pay**',
       ]),
-      p('There’s a [follow-up message for each reason](/resources/follow-up-message), ready to copy.'),
+      p('[Customer asked the price and stopped replying](/resources/customer-asked-price-and-stopped-replying) covers what to send for each reason.'),
     ),
 
     block('blocks.grid-table', {
@@ -120,7 +120,7 @@ module.exports = A({
 
     faq([
       ['How long is too long without replying?', 'There’s no single number, but a buyer asking the price or size is shopping now, so hours matter more than days. Reply to the buyers closest to paying first. If you reply through a business tool there’s also a hard limit: on the WhatsApp Business Platform, normal replies can only go out within 24 hours of the buyer’s last message (after that, only pre-approved templates), and Meta’s messaging API for Instagram sets a standard 24-hour window too.'],
-      ['Is WhatsApp Business a CRM tool?', 'Not really. The WhatsApp Business app gives you a business profile, a catalogue, quick replies and lists (formerly labels) to sort chats by hand. That helps you stay organised, but it won’t tell you which buyer is closest to paying, who went quiet, or why. SellThinker isn’t a CRM either: it reads the chats and tells you where to act.'],
+      ['Is WhatsApp Business a CRM tool?', 'Not really. The WhatsApp Business app gives you a business profile, a catalogue, quick replies and labels (now called lists in newer versions of the app) to sort chats by hand. That helps you stay organised, but it won’t tell you which buyer is closest to paying, who went quiet, or why. SellThinker isn’t a CRM either: it reads the chats and tells you where to act.'],
       ['Why am I losing sales on Instagram?', 'If people are messaging you but not buying, the sales are usually leaking inside the chats: slow replies, buyers who asked how to pay and got no link, links left unpaid, chats that stop after the price, and quiet buyers nobody followed up. Count each one in a month of chats to see which is biggest.'],
     ]),
 
@@ -128,6 +128,7 @@ module.exports = A({
       items: [
         { title: 'Send messages: customer service windows (WhatsApp Cloud API)', publisher: 'Meta for Developers', url: 'https://developers.facebook.com/docs/whatsapp/cloud-api/guides/send-messages' },
         { title: 'Messenger Platform and IG Messaging API Policy Overview', publisher: 'Meta for Developers', url: 'https://developers.facebook.com/docs/messenger-platform/policy/policy-overview' },
+        { title: 'Instagram Messaging overview', publisher: 'Meta for Developers', url: 'https://developers.facebook.com/documentation/business-messaging/instagram-messaging/overview' },
         { title: 'How to use labels', publisher: 'WhatsApp Help Center', url: 'https://faq.whatsapp.com/smbi/chats/how-to-use-labels/?lang=en' },
         { title: 'Staying organized as a small business using Lists and quick replies on WhatsApp', publisher: 'WhatsApp Business', url: 'https://whatsappbusiness.com/resources/resource-library/staying-organized-smb-using-lists-quick-replies/' },
       ],
@@ -137,7 +138,7 @@ module.exports = A({
       links: [
         { label: 'When (and how) to send a payment link on WhatsApp', url: '/resources/when-to-send-payment-link-on-whatsapp' },
         { label: 'Customer asked the price and stopped replying', url: '/resources/customer-asked-price-and-stopped-replying' },
-        { label: 'Follow-up message to a customer who stopped replying', url: '/resources/follow-up-message' },
+        { label: 'Recovery alerts: why a buyer went quiet, and what to send', url: '/recovery-alerts' },
         { label: 'Which WhatsApp chat to reply to first', url: '/resources/which-whatsapp-chat-to-reply-to-first' },
       ],
     }),

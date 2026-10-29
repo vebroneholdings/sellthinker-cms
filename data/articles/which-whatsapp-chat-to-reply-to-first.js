@@ -8,7 +8,7 @@ module.exports = A({
   topic: 'whatsapp',
   displayDate: '2026-10-29',
   readingMinutes: 4,
-  reviewStatus: 'needs_fact_check',
+  reviewStatus: 'approved',
   title: 'Which WhatsApp chat to reply to first (when you have 200)',
   excerpt: 'Two hundred chats and one pair of thumbs. Reply to the buyer who said yes first, then a paying customer with a problem, then business enquiries, warm buyers going quiet and open questions. And why unread is not the same as unanswered.',
   seo: {
@@ -49,12 +49,12 @@ module.exports = A({
         { label: 'Reply', cells: [{ value: 'A new buyer' }, { value: '“Size L available hai?”' }, { value: 'Yes or no, plus a photo' }] },
         { label: 'Later', cells: [{ value: 'The other 150 or so' }, { value: '“hi”, “👍”, “thank you”, a shared reel' }, { value: 'Nothing yet: there’s no question to answer' }] },
       ],
-      caption: 'An example morning, not real data.',
+      caption: 'An example morning, not real data. Priority Today shows the top 25; the rest wait their turn.',
     }),
 
     text(
       h2('Unread ≠ unanswered'),
-      p('WhatsApp’s Unread filter shows chats you haven’t opened, not chats you haven’t answered. Open “COD milega?” on the bus, mean to reply at home, and the green dot is gone while the buyer still waits. And ten unread chats can be nine thumbs-ups and a thank-you, needing nothing.'),
+      p('WhatsApp’s Unread filter shows chats you haven’t opened (or marked unread by hand), not chats you haven’t answered. Open “COD milega?” on the bus, mean to reply at home, and the green dot is gone while the buyer still waits. And ten unread chats can be nine thumbs-ups and a thank-you, needing nothing.'),
       p('SellThinker looks at who spoke last and what they asked. An unanswered question stays at **Needs reply** until you answer, opened or not.'),
     ),
 
@@ -75,8 +75,8 @@ module.exports = A({
     block('blocks.related-links', {
       title: 'Read next',
       links: [
-        { label: 'Hot, warm and cold leads for WhatsApp and Instagram sellers', url: '/resources/hot-warm-cold-leads-whatsapp-instagram' },
-        { label: 'Follow-up message to a customer who stopped replying', url: '/resources/follow-up-message' },
+        { label: 'Lead scoring: hot, warm and cold buyers', url: '/lead-scoring' },
+        { label: 'Customer asked the price and stopped replying', url: '/resources/customer-asked-price-and-stopped-replying' },
       ],
     }),
 

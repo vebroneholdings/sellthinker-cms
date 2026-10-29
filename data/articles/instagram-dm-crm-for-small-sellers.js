@@ -12,7 +12,7 @@ module.exports = A({
   topic: 'instagram',
   displayDate: '2026-10-29',
   readingMinutes: 4,
-  reviewStatus: 'needs_fact_check',
+  reviewStatus: 'approved',
   title: 'Instagram DM CRM for small sellers (that isn’t a CRM)',
   excerpt: 'Yes, CRMs that record Instagram DMs exist. Most are built for sales reps and outreach coaches. If buyers message you first on Instagram and WhatsApp, here’s what actually needs tracking, and what SellThinker deliberately leaves out.',
   seo: {
@@ -24,7 +24,7 @@ module.exports = A({
 
     text(
       h2('Does a CRM exist that records Instagram DMs?'),
-      p('Yes, several. The question comes up on Reddit’s r/CRM, and the answers point to tools like these. Bitrix24 turns each new DM into a CRM record with an owner and next steps, once an Instagram professional account linked to a Facebook Page is connected. NetHunt links DMs to sales pipelines and tasks. DM Tracker puts DMs that come through ManyChat on follow-up boards.'),
+      p('Yes, several. Sellers ask this often, and the usual answers point to tools like these. Bitrix24 turns each new DM into a CRM record with an owner and next steps, once an Instagram professional account linked to a Facebook Page is connected. NetHunt links DMs to sales pipelines and tasks. DM Tracker, built for coaches and outreach sellers, puts DM conversations on follow-up boards and can pull in conversations from ManyChat.'),
       p('Look at who they’re built for: sales reps working a pipeline, or coaches sending outreach DMs. A boutique answering “rate batao” and “COD milega?” all day has a different problem. Your buyers come to you. You don’t need to log them; you need to know which one is about to pay.'),
     ),
 
@@ -87,7 +87,7 @@ module.exports = A({
     }),
 
     faq([
-      ['Does a CRM exist that records Instagram DMs?', 'Yes: Bitrix24 and NetHunt turn DMs into CRM records, and DM Tracker tracks DM follow-ups through ManyChat. They suit sales reps and outreach more than sellers whose buyers message first.'],
+      ['Does a CRM exist that records Instagram DMs?', 'Yes: Bitrix24 and NetHunt turn DMs into CRM records, and DM Tracker puts DM conversations on follow-up boards (it also connects with ManyChat). They suit sales reps and outreach more than sellers whose buyers message first.'],
       ['Is there a free CRM for WhatsApp?', 'The closest is the free WhatsApp Business app: labels like “Pending order”, quick replies, and archive for finished chats. For a few dozen chats a day, that’s enough. Past that, labels go stale faster than you can update them.'],
       ['What is the best CRM for Instagram sellers?', 'It depends who starts the chat. If you chase leads, a DM pipeline tool fits. If buyers ask you price, size and COD, you need intent and reply order more than a pipeline.'],
       ['Do small businesses need a CRM?', 'Many chat sellers don’t. If every sale starts and ends in a DM, the chat is the record. What’s missing is knowing which one to open first.'],
