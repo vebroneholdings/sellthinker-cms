@@ -26,13 +26,13 @@ module.exports = A({
 
     block('blocks.explainer', {
       title: 'Priority Today: Close → Protect → Business → Rescue → Reply',
-      intro: 'Up to 25 chats, in this order. A list of 200 isn’t a priority list.',
+      intro: 'The chats that need you, in this order. A list of 200 isn’t a priority list.',
       layout: 'flow',
       cards: [
         { icon: '1', title: 'Close', body: 'They said yes or asked how to pay. Send your UPI ID or link, or confirm the size. Asked for COD? Answer that, no link.' },
         { icon: '2', title: 'Protect', body: 'A paying customer with an unanswered complaint. Outranks a warm lead.' },
         { icon: '3', title: 'Business', body: 'Wholesale and collab enquiries, answered while warm. Never a “still interested?” nudge.' },
-        { icon: '4', title: 'Rescue', body: 'Warm buyers going quiet, each with a reason (Price talk, Link unpaid…) and one best move.' },
+        { icon: '4', title: 'Rescue', body: 'Warm buyers going quiet, each with the likely reason and one best move.' },
         { icon: '5', title: 'Reply', body: 'Open questions. A fast, plain answer keeps them warm.' },
       ],
     }),
@@ -49,7 +49,7 @@ module.exports = A({
         { label: 'Reply', cells: [{ value: 'A new buyer' }, { value: '“Size L available hai?”' }, { value: 'Yes or no, plus a photo' }] },
         { label: 'Later', cells: [{ value: 'The other 150 or so' }, { value: '“hi”, “👍”, “thank you”, a shared reel' }, { value: 'Nothing yet: there’s no question to answer' }] },
       ],
-      caption: 'An example morning, not real data. Priority Today shows the top 25; the rest wait their turn.',
+      caption: 'An example morning, not real data.',
     }),
 
     text(

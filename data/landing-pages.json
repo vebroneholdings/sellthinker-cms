@@ -234,7 +234,7 @@
     "faq": [
       {
         "question": "How many chats are on the list?",
-        "answer": "Up to 25, so the list stays something you can actually finish. Everything else is still waiting in your inbox, sorted and scored, for when you have time."
+        "answer": "Only as many as you can get through, so the list stays something you can actually finish. Everything else is still waiting in your inbox, sorted and scored, for when you have time."
       },
       {
         "question": "What if I want to see everything?",
@@ -265,7 +265,7 @@
     "pillars": [
       {
         "title": "Hot, warm, cold, at a glance",
-        "text": "Hot (70+) means they're close to buying. Warm (40–69) is interested. Cold (under 40) can wait. The badge sits on every sales chat."
+        "text": "Hot means they're close to buying. Warm means they're interested. Cold can wait. The badge sits on every sales chat."
       },
       {
         "title": "Built from the buyer's words",
@@ -380,7 +380,7 @@
       },
       {
         "title": "Explain",
-        "text": "Each one gets a likely reason, based on what they last said."
+        "text": "Each one gets a likely reason, based on how long they have been quiet and what was said in the chat."
       },
       {
         "title": "Suggest",

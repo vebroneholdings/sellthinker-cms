@@ -32,10 +32,10 @@ module.exports = A({
       h2('Sell by chat: what actually needs tracking'),
       p('When you sell by chat, the deal is the conversation. Four things matter:'),
       ul([
-        '**Who is ready to pay.** A 0–100 score from the buyer’s own words: Hot 70+, Warm 40–69, Cold below 40. One question alone can’t make a chat hot.',
+        '**Who is ready to pay.** A score from the buyer’s own words, shown as Hot (close to buying), Warm (interested) or Cold (can wait). One question alone can’t make a chat hot.',
         '**Where each sale stands.** Needs reply → Ready to close → Payment sent → Closed, with Recovery and Lost for the ones that slip.',
-        '**Who went quiet, and why.** Recovery names the reason (Price talk, Link unpaid, Fit doubt…) and one best move.',
-        '**Which chat to open first.** Priority Today: up to 25 chats, Close → Protect → Business → Rescue → Reply.',
+        '**Who went quiet, and why.** Recovery shows the likely reason (a price worry, an unpaid link, a fit doubt…) and one best move.',
+        '**Which chat to open first.** Priority Today: the chats to answer first, Close → Protect → Business → Rescue → Reply.',
       ]),
     ),
 
@@ -51,7 +51,7 @@ module.exports = A({
       rows: [
         { label: 'Instagram DMs and WhatsApp chats in one place', cells: [no('You copy them in'), no('Two separate apps'), part('Depends on the connectors'), yes('One inbox')] },
         { label: 'Tells you which chat to open first', cells: [no(''), no(''), part('If you set up rules'), yes('Priority Today')] },
-        { label: 'Flags quiet buyers with a reason', cells: [no(''), part('A label you set by hand'), part('Task reminders'), yes('Nine reasons, one move each')] },
+        { label: 'Flags quiet buyers with a reason', cells: [no(''), part('A label you set by hand'), part('Task reminders'), yes('The likely reason, and one best move')] },
         { label: 'Custom pipelines and deal values', cells: [part('If you build them'), no(''), yes(''), no('Four fixed stages')] },
         { label: 'Syncs to other CRMs', cells: [no(''), no(''), yes(''), no('')] },
         { label: 'One record per person across channels', cells: [no(''), no(''), part('Often, by merging contacts'), no('Two handles stay two buyers')] },

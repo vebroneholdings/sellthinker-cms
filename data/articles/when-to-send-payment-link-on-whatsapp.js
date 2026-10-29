@@ -82,7 +82,7 @@ module.exports = A({
         '**Offer the other way to pay.** UPI if you sent a link, a link if you sent UPI, COD if you offer it.',
         '**Then let it rest.** Repeating the reminder doesn’t answer the worry. Answering the worry might.',
       ]),
-      p('In SellThinker, these chats appear in [Recovery](/recovery-alerts) with the reason **Link unpaid** and one best move. If the buyer asked how to pay and never got an answer, the reason is **How to pay** instead.'),
+      p('In SellThinker, these chats appear in [Recovery](/recovery-alerts) with the likely reason, here an unpaid link, and one best move. If the buyer asked how to pay and never got an answer, Recovery says that instead.'),
     ),
     template('Link unpaid reminder', 'Hi {name}! Your link for the {product} still works whenever you’re ready: {your payment link}. Anything you’d like to check before you order?', { channel: 'whatsapp', whenToUse: 'Once, a few hours to a day after the link went unpaid.' }),
     template('Link unpaid reminder (Hinglish)', 'Hi {name}! {product} aapke liye rakha hai. Link abhi bhi kaam kar raha hai: {your payment link}. Kuch puchna ho toh batayiye.', { channel: 'whatsapp', whenToUse: 'The same reminder, for a buyer writing in Hinglish.' }),

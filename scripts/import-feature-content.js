@@ -1,11 +1,11 @@
 'use strict';
 
 /*
- * Snapshots the website's feature-page copy (public/design/js/feature-content.js
+ * Snapshots the website's feature-page copy (src/site/feature-content.js
  * in sellThinker-website) into data/landing-pages.json, which `npm run seed`
  * loads into the "Feature landing page" type.
  *
- *   npm run import:features -- ../sellThinker-website/public/design/js/feature-content.js
+ *   npm run import:features -- ../sellThinker-website/src/site/feature-content.js
  *
  * Re-run it whenever the copy in that file changes, then `npm run seed`.
  */
@@ -14,9 +14,11 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 
-const source = path.resolve(process.argv[2] || '../sellThinker-website/public/design/js/feature-content.js');
+const source = path.resolve(process.argv[2] || '../sellThinker-website/src/site/feature-content.js');
 const sandbox = { window: {} };
-vm.runInNewContext(fs.readFileSync(source, 'utf8'), sandbox, { filename: source });
+// The file is an ES module (`export { FEATURE_CONTENT };`); run it as a plain script.
+const code = fs.readFileSync(source, 'utf8').replace('export { FEATURE_CONTENT };', 'window.FEATURE_CONTENT = FEATURE_CONTENT;');
+vm.runInNewContext(code, sandbox, { filename: source });
 const pages = sandbox.window.FEATURE_CONTENT;
 if (!pages) throw new Error(`No window.FEATURE_CONTENT in ${source}`);
 

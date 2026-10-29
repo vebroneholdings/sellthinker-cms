@@ -9,11 +9,11 @@ module.exports = A({
   displayDate: '2026-10-29',
   readingMinutes: 7,
   reviewStatus: 'approved',
-  title: 'Customer asked the price and stopped replying: nine reasons and the one move for each',
-  excerpt: 'A buyer who goes quiet after the price usually hasn’t said no. They stalled on one thing: fit, delivery, trust, how to pay. Here are the nine reasons buyers go quiet on WhatsApp and Instagram, and the one message to send for each.',
+  title: 'Customer asked the price and stopped replying: nine common reasons and the one move for each',
+  excerpt: 'A buyer who goes quiet after the price usually hasn’t said no. They stalled on one thing: fit, delivery, trust, how to pay. Here are nine common reasons buyers go quiet on WhatsApp and Instagram, and the one message to send for each.',
   seo: {
     metaTitle: 'Customer asked the price and stopped replying? 9 reasons',
-    metaDescription: 'Why buyers go quiet after the price on WhatsApp and Instagram, the nine reasons behind it, and the one message to send for each. No discount needed.',
+    metaDescription: 'Why buyers go quiet after the price on WhatsApp and Instagram, nine common reasons behind it, and the one message to send for each. No discount needed.',
   },
   body: [
     tldr('When a customer asks the price and stops replying, the price is rarely the whole story. Usually one thing is still open: size, delivery, trust or how to pay. Find which one, answer it in one message, and stop there. No apology, no invented urgency, no discount by default.'),
@@ -21,7 +21,7 @@ module.exports = A({
     text(
       p('Your customer asked the price and stopped replying, and now the chat just sits there: their “rate batao?”, your “$45”, two blue ticks, then nothing.'),
       p('If you’re a solo seller handling 50–500 chats a day on Instagram and WhatsApp, you’ll have dozens of these by evening, and no time to guess which ones deserve a second message.'),
-      p('Most of these buyers didn’t say no. They stopped at a specific question, and the price was just the last thing on screen. Here are the nine reasons buyers go quiet and the one best move for each.'),
+      p('Most of these buyers didn’t say no. They stopped at a specific question, and the price was just the last thing on screen. Here are nine common reasons buyers go quiet and the one best move for each.'),
 
       h2('Why customers don’t reply after the price'),
       p('A price question is the moment a buyer starts deciding. In the same few seconds they’re wondering: will it fit, when will it arrive, is it real, can I pay by UPI or COD? If your reply answers only the price, the rest stay open, and leaving feels easier than asking again.'),
@@ -39,7 +39,7 @@ module.exports = A({
     ),
 
     block('blocks.grid-table', {
-      title: 'The nine reasons buyers go quiet, and the one best move',
+      title: 'Nine common reasons buyers go quiet, and the one best move',
       style: 'comparison',
       columns: [{ label: 'What you see in the chat' }, { label: 'The one best move', highlight: true }],
       rows: [
@@ -98,7 +98,7 @@ module.exports = A({
       p('Leave out invented urgency (“only 1 left!” when you have twenty) and a discount nobody asked for. Both teach buyers that going quiet pays. SellThinker’s [Recovery alerts](/recovery-alerts) draft a follow-up that fits the reason, for you to check and send.'),
     ),
 
-    callout('insight', 'How SellThinker finds these for you', 'SellThinker’s Recovery view scans your Instagram DMs and WhatsApp Business chats for quiet buyers, labels each with one of these nine reasons and shows the best move. It drafts the follow-up in English, Hindi or Hinglish; you send it. It is not a chatbot and never sends anything on its own.'),
+    callout('insight', 'How SellThinker finds these for you', 'SellThinker’s Recovery view watches your Instagram DMs and WhatsApp Business chats for buyers who have gone quiet. From the timing and what was said, it works out the likely reason, which can be one of these or something else, and shows the best move. It drafts the follow-up in English, Hindi or Hinglish; you send it. It is not a chatbot and never sends anything on its own.'),
 
     faq([
       ['Is no response a rejection?', 'Usually not. A clear “no thanks” is a rejection; silence after a price is a pause. Most often something is still unanswered (fit, delivery, trust, how to pay) or the buyer simply got busy. Send one follow-up that answers the likely reason, and only mark the chat lost if that gets no reply.'],

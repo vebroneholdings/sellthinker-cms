@@ -54,18 +54,18 @@ const showcase = [
   A({
     slug: 'hot-warm-cold-leads-whatsapp-instagram', hub: 'blog', template: 'explainer', topic: 'closing', displayDate: '2026-10-20', readingMinutes: 6, reviewStatus: 'approved',
     title: 'Hot, warm and cold leads for WhatsApp and Instagram sellers',
-    excerpt: 'What hot, warm and cold mean when your leads are chats, not form fills, and how a score from 0 to 100 decides which chat you open first.',
+    excerpt: 'What hot, warm and cold mean when your leads are chats, not form fills, and how the score decides which chat you open first.',
     body: [
-      tldr('Every sales chat gets a score from 0 to 100. Hot is 70 and above, warm is 40 to 69, cold is below 40. The score comes from what the buyer actually said, not from guesswork.'),
-      { __component: 'blocks.definition', term: 'Hot lead', short: 'A buyer whose chat scores 70 or more: they’ve named a product and asked to buy, or said so in two messages.', more: 'One question on its own can’t make a chat hot. It takes a clear ask, like “send me the link”.' },
+      tldr('Every sales chat gets a hot, warm or cold badge. Hot means close to buying, warm means interested, cold can wait. It comes from what the buyer actually said, not from guesswork.'),
+      { __component: 'blocks.definition', term: 'Hot lead', short: 'A buyer who is close to paying: they’ve named a product and asked to buy, or said so in two messages.', more: 'One question on its own can’t make a chat hot. It takes a clear ask, like “send me the link”.' },
       {
         __component: 'blocks.explainer',
         title: 'The three bands',
         layout: 'flow',
         cards: [
-          { icon: '❄', title: 'Cold · below 40', body: 'Browsing, saying hi, a broad question. Every chat starts here.' },
-          { icon: '◐', title: 'Warm · 40 to 69', body: 'Picked a product, asking about size, price or delivery.' },
-          { icon: '●', title: 'Hot · 70 and up', body: 'Ready to pay. Send the link, confirm the variant, finish the sale.' },
+          { icon: '❄', title: 'Cold', body: 'Browsing, saying hi, a broad question. Every chat starts here.' },
+          { icon: '◐', title: 'Warm', body: 'Picked a product, asking about size, price or delivery.' },
+          { icon: '●', title: 'Hot', body: 'Ready to pay. Send the link, confirm the variant, finish the sale.' },
         ],
       },
       {
@@ -131,7 +131,7 @@ const showcase = [
     title: 'Glossary: the words SellThinker uses, in plain English',
     excerpt: 'Priority Today, quiet buyers, recovery windows and the noise shelf, each in one sentence.',
     body: [
-      { __component: 'blocks.definition', term: 'Priority Today', short: 'Your list of up to 25 chats to work through, in the order they matter: Close, Protect, Business, Rescue, Reply.' },
+      { __component: 'blocks.definition', term: 'Priority Today', short: 'Your list of the chats to work through first, in the order they matter: Close, Protect, Business, Rescue, Reply.' },
       { __component: 'blocks.definition', term: 'Quiet buyer', short: 'Someone who was warm or hot and stopped replying.', more: 'Recovery shows them with the reason they stalled and the one best move.' },
       { __component: 'blocks.definition', term: 'Recovery window', short: 'How long you still have to follow up before a quiet buyer usually goes cold.' },
       { __component: 'blocks.definition', term: 'Payment sent', short: 'The stage after you’ve sent a buyer your payment link and before they’ve paid.' },
@@ -257,11 +257,11 @@ const guides = [
   guide({ slug: 'roles', displayDate: '2026-10-01', readingMinutes: 3, guide: { stage: 'setup', stepsCount: 3 }, title: 'Choose who can see what', excerpt: 'Owner, admin and member roles, and what each one can open.', body: stub('Owner, admin and member roles, and what each one can open.') }),
   guide({
     slug: 'first-run', displayDate: '2026-10-01', readingMinutes: 6, reviewStatus: 'approved', guide: { stage: 'day', stepsCount: 5 },
-    title: 'Work your first priority run', excerpt: 'Up to 25 stops, one pass. How to use the why-line, drafts and skips.',
+    title: 'Work your first priority run', excerpt: 'One pass through the chats that matter today. How to use the why-line, drafts and skips.',
     body: [
       tldr('Open Priority Today, press Start the run, and work one chat at a time from the top. Skip what you can’t answer yet; it comes back later.'),
       steps([
-        ['Open Priority Today', 'Your list is built fresh at 6am, up to 25 chats, closest to money first.'],
+        ['Open Priority Today', 'Your list is built fresh at 6am, closest to money first.'],
         ['Read the why-line', 'Each stop says why it’s there: a buyer said yes, a complaint is waiting, a warm buyer is going quiet.'],
         ['Use the draft, or don’t', 'The reply is already drafted. Use it, change it, or write your own. You press send.'],
         ['Skip when you need to', 'Not sure which product they meant? Skip it. Skipped chats come back for a second pass.'],

@@ -33,7 +33,7 @@ module.exports = A({
       p('Lead response time is how long a buyer waits for your first useful answer. In chat it matters more, because the next shop is one tap away in the buyer’s feed.'),
       p('**What it looks like:** a buyer asks the price of the green kurta at 9:40 pm. You see it at 8 am, reply, and hear nothing back.'),
       p('**How to count it:** in a month of sales chats, mark every chat where a buyer’s question sat waiting for you, and note how long. Then look for the pattern: late evenings, Sundays, the day after a new Reel.'),
-      p('**First fix:** stop answering in arrival order. Answer the buyers closest to paying first. That’s what SellThinker’s [Priority Today](/daily-priority-list) list is for: up to 25 chats a day, in the order Close, Protect, Business, Rescue, Reply, so a buyer asking how to pay never waits behind someone who said “hi”.'),
+      p('**First fix:** stop answering in arrival order. Answer the buyers closest to paying first. That’s what SellThinker’s [Priority Today](/daily-priority-list) list is for: the chats to answer first each day, in the order Close, Protect, Business, Rescue, Reply, so a buyer asking how to pay never waits behind someone who said “hi”.'),
     ),
 
     text(
@@ -48,7 +48,7 @@ module.exports = A({
       p('You sent the link. The buyer saw it. No payment. Sellers notice this leak least, because from your side the chat feels finished.'),
       p('A buyer who asked for the link wanted to pay a moment ago. Something got in the way: the delivery cost, a wish for COD, or just a busy evening.'),
       p('**How to count it:** links and UPI IDs you sent where no matching payment shows in your Razorpay, Stripe or bank app. SellThinker can’t see your payments, so this check is always against your own dashboard.'),
-      p('**First fix:** one short reminder with the same link, then a question about the thing most likely in the way. In SellThinker, these chats show up in Recovery with the reason **Link unpaid** and one best move.'),
+      p('**First fix:** one short reminder with the same link, then a question about the thing most likely in the way. In SellThinker, these chats show up in Recovery with the likely reason, here an unpaid link, and one best move.'),
     ),
 
     text(
@@ -66,14 +66,14 @@ module.exports = A({
     }),
     text(
       p('**How to count it:** sales chats whose last message is your price, with no reply from the buyer.'),
-      p('**First fix:** never send the price alone. For the reasons buyers go quiet and what to say to each, see [customer asked the price and stopped replying](/resources/customer-asked-price-and-stopped-replying) and [what to reply when a customer asks the price](/resources/what-to-reply-when-customer-asks-price-whatsapp). SellThinker’s Recovery list tags these chats **Price talk**.'),
+      p('**First fix:** never send the price alone. For the reasons buyers go quiet and what to say to each, see [customer asked the price and stopped replying](/resources/customer-asked-price-and-stopped-replying) and [what to reply when a customer asks the price](/resources/what-to-reply-when-customer-asks-price-whatsapp). SellThinker’s Recovery list flags these chats with the price as the likely reason.'),
     ),
 
     text(
       h2('Ignored recovery'),
       p('The last leak is the quietest. A buyer went silent, there was a clear reason to follow up (a date they gave you, a question you missed, a link they never paid), and nobody did. Not because you decided to let them go, but because 300 other chats came in.'),
       p('**How to count it:** quiet sales chats with an obvious reason to follow up and no message from you since.'),
-      p('**First fix:** a short recovery pass once a day. SellThinker’s [Recovery](/recovery-alerts) list scans for quiet buyers and gives each one a reason with one best move:'),
+      p('**First fix:** a short recovery pass once a day. SellThinker’s [Recovery](/recovery-alerts) list watches for quiet buyers and, from the timing and what was said, gives each one the likely reason and one best move. Common reasons include:'),
       ul([
         '**Price talk**, **Missed question**, **Date passed**, **Drifted**',
         '**Link unpaid**, **Delivery worry**, **Trust doubt**, **Fit doubt**, **How to pay**',
